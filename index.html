@@ -1,355 +1,714 @@
-<!doctype html><html lang="ar" dir="rtl"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>قائمة نسب آل النجّار</title>
-<meta name="description" content="قائمة نسب آل النجّار — الأنصاريّون الخزرجيّون، من آدم عليه السلام إلى اليوم.">
-<meta property="og:title" content="قائمة نسب آل النجّار">
-<meta property="og:description" content="الأنصاريّون الخزرجيّون — من آدم عليه السلام إلى اليوم.">
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="نسب آل النجّار — الأنصاريّون الخزرجيّون، من آدم عليه السلام إلى اليوم."><title>نسب آل النجّار — للاطّلاع</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
+/* ── آل النجّار · نظام النسب ───────────────────────────────────────────
+   لوح ورقي دافئ، ذهبٌ للرجال ووردٌ للنساء ورمادٌ للحلقة المفقودة.
+   كل شيء يلتفّ داخل عرض الشاشة — لا تمرير أفقي في أي حال.           */
 :root{
   --paper:#F7F1E3; --card:#FFFCF3; --card2:#FBF5E6; --ink:#241C12; --ink2:#53442F;
   --muted:#8A7A60; --line:#DCCDAA; --line2:#EADDC2;
   --gold:#B4893A; --gold2:#8A6519; --goldbg:#F6EBD2;
-  --rose:#B9587A; --rosebg:#FBEAF0; --green:#4E7A42; --grey:#9A9078; --greybg:#E8E2D4;
-  --d:"Amiri","Traditional Arabic",serif; --u:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
-  --sc:1;
+  --rose:#B9587A; --rosebg:#FBEAF0;
+  --green:#4E7A42; --greenbg:#E9F1E4;
+  --grey:#9A9078; --greybg:#E8E2D4;
+  --red:#A6422F;
+  --d:"Amiri","Traditional Arabic",serif;
+  --u:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --sc:1;                       /* معامل التكبير في الشجرة */
+  --r:12px;
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-html,body{max-width:100%;overflow-x:hidden}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--u);font-size:15px;
-  line-height:1.65;overflow-wrap:anywhere}
-button,input{font:inherit;color:inherit}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;direction:rtl;background:var(--paper);color:var(--ink);font-family:var(--u);
+  font-size:15px;line-height:1.65;overflow-wrap:anywhere}
+button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
-h1,h2,h3{font-family:var(--d);line-height:1.25;margin:0}
-main{max-width:980px;margin:0 auto;padding:12px 13px 70px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;margin-bottom:13px}
-.panel>h2{font-size:22px}
-.lede{color:var(--ink2);margin:3px 0 11px;font-size:14px}
-.hr{height:1px;background:var(--line2);margin:14px 0}
-.muted{color:var(--muted)} .sm{font-size:12.5px}
-.row{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
-.b{border:1px solid var(--line);background:var(--card2);border-radius:9px;padding:7px 13px;
-  font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap}
+h1,h2,h3,h4{font-family:var(--d);line-height:1.25;margin:0}
+a{color:var(--gold2)}
+
+/* ── شريط علوي ───────────────────────────────────────────── */
+.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topin{max-width:1060px;margin:0 auto;padding:9px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.brand{font-family:var(--d);font-weight:700;font-size:clamp(19px,4.6vw,25px);white-space:nowrap}
+.brand span{display:block;font-family:var(--u);font-size:11px;font-weight:400;color:var(--muted);margin-top:-2px}
+.who{margin-inline-start:auto;display:flex;gap:7px;align-items:center;font-size:12px;color:var(--ink2);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px 4px 4px;max-width:100%}
+.who img{width:24px;height:24px;border-radius:50%;flex:none}
+.who b{font-weight:600}
+.tag{font-size:10.5px;border-radius:999px;padding:1px 7px;border:1px solid currentColor;white-space:nowrap}
+.tag.ow{color:var(--gold2)} .tag.ed{color:var(--green)} .tag.vw{color:var(--muted)}
+nav.tabs{max-width:1060px;margin:0 auto;padding:0 8px 8px;display:flex;gap:5px;overflow-x:auto;
+  scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;
+  font-size:13.5px;cursor:pointer;white-space:nowrap;flex:none}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#FBF5E6;font-weight:600}
+
+/* ── تخطيط ───────────────────────────────────────────── */
+main{max-width:1060px;margin:0 auto;padding:16px 14px 90px}
+section[hidden]{display:none}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 18px;margin-bottom:14px}
+.panel>h2{font-size:23px;margin-bottom:4px}
+.panel>h3{font-size:19px;margin:18px 0 6px}
+.lede{color:var(--ink2);margin:2px 0 12px}
+.hr{height:1px;background:var(--line2);margin:16px 0}
+.muted{color:var(--muted)}
+.sm{font-size:12.5px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.grow{flex:1 1 180px;min-width:0}
+
+/* ── أزرار ───────────────────────────────────────────── */
+.b{border:1px solid var(--line);background:var(--card2);border-radius:9px;padding:8px 14px;
+  font-size:13.5px;font-weight:500;cursor:pointer;display:inline-flex;gap:6px;align-items:center;
+  white-space:nowrap;transition:.12s}
 .b:hover{border-color:var(--gold);background:var(--goldbg)}
+.b:disabled{opacity:.45;cursor:not-allowed}
+.b.pri{background:var(--ink);border-color:var(--ink);color:#FBF5E6}
+.b.pri:hover{background:#3A2E1E}
+.b.add{background:var(--greenbg);border-color:#BCCFB4;color:#33562A}
+.b.add:hover{background:#DDEAD6}
+.b.edit{background:var(--goldbg);border-color:#E0CCA0;color:var(--gold2)}
+.b.del{background:#FAE8E3;border-color:#E6C2B8;color:var(--red)}
+.b.sm{padding:5px 10px;font-size:12.5px}
+.b.ic{padding:6px 9px}
 .b.on{background:var(--rose);border-color:var(--rose);color:#fff}
-.b.ic{padding:6px 11px}
-input[type=text]{width:100%;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 11px}
-input:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px var(--goldbg)}
 
-/* العنوان المذهّب */
-.unwan{margin:0 -4px 12px}
+/* ── نماذج ───────────────────────────────────────────── */
+.fld{display:block;margin-bottom:11px}
+.fld>span{display:block;font-size:12.5px;font-weight:600;color:var(--ink2);margin-bottom:4px}
+.fld>span i{font-style:normal;color:var(--red)}
+.fld>span em{font-style:normal;font-weight:400;color:var(--muted)}
+input[type=text],input[type=date],input[type=number],select,textarea{
+  width:100%;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:14px}
+textarea{min-height:68px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px var(--goldbg)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0 12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 13px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#FBF5E6;font-weight:600}
+.chip.f[aria-pressed="true"]{background:var(--rose);border-color:var(--rose)}
+.chip.al[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+.hintline{font-size:12px;color:var(--muted);margin-top:-6px;margin-bottom:10px}
+
+/* ── العُنوان المُذهَّب فوق الشجرة ───────────────────────── */
+.unwan{margin:-6px -4px 12px}
 .unwan svg{width:100%;height:auto;display:block}
-.fr{font-family:var(--d)}
+.unwan .fr{font-family:var(--d)}
 
-/* قائمة الجذع */
-.chain{counter-reset:g}
-.cr{display:flex;gap:9px;align-items:baseline;padding:5px 2px;border-bottom:1px dashed var(--line2)}
-.cr:last-child{border-bottom:0}
-.cr .n{font-family:var(--u);font-size:11px;color:var(--muted);min-width:26px;flex:none;text-align:center;
-  background:var(--card2);border:1px solid var(--line2);border-radius:999px;padding:1px 0}
-.cr .v{font-family:var(--d);font-size:19px;font-weight:700;cursor:pointer}
-.cr .v:hover{color:var(--gold2)}
-.cr.gap .v{color:var(--muted);border-bottom:2px dashed var(--grey);font-weight:400}
-.cr .tagm{font-family:var(--u);font-size:11px;color:var(--gold2);background:var(--goldbg);
-  border-radius:999px;padding:1px 8px}
+/* ── الشجرة ───────────────────────────────────────────── */
+.treebar{position:sticky;top:0;z-index:5;display:flex;gap:7px;flex-wrap:wrap;align-items:center;
+  padding:9px 0;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(6px)}
+.crumbs{display:flex;gap:3px;flex-wrap:wrap;align-items:center;font-family:var(--d);font-size:15px;
+  padding:7px 0 10px;border-bottom:1px solid var(--line2);margin-bottom:10px}
+.crumbs button{border:0;background:none;cursor:pointer;padding:2px 5px;border-radius:6px;font-family:var(--d);font-size:15px}
+.crumbs button:hover{background:var(--goldbg)}
+.crumbs i{font-style:normal;color:var(--muted);font-size:11px}
 
-/* قائمة الفروع */
-.kids{display:flex;flex-wrap:wrap;gap:calc(6px*var(--sc));margin:2px 0 7px}
-.pc{display:flex;gap:calc(6px*var(--sc));align-items:center;background:var(--card2);
-  border:1.5px solid var(--line);border-radius:calc(10px*var(--sc));
-  padding:calc(5px*var(--sc)) calc(10px*var(--sc));cursor:pointer;
-  font-family:var(--d);font-size:calc(17px*var(--sc));font-weight:700;max-width:100%}
-.pc:hover{border-color:var(--gold);background:var(--goldbg)}
-.pc.f{border-color:#E7BECD;background:var(--rosebg)}
-.pc.g{border-style:dashed;border-color:var(--grey);background:var(--greybg);color:var(--muted);font-weight:400}
-.pc .c{font-family:var(--u);font-size:calc(10px*var(--sc));background:var(--green);color:#fff;
-  border-radius:999px;padding:0 calc(6px*var(--sc));font-weight:600;flex:none}
-.pc.f .c{background:var(--rose)}
-.pc .d{width:7px;height:7px;border-radius:50%;flex:none}
-.d1{background:var(--green)}.d2{background:var(--grey)}.d0{background:#D9C58E}
-.pc .cv{font-family:var(--u);font-size:calc(11px*var(--sc));color:var(--muted);flex:none}
-.sub{margin-inline-start:calc(9px*var(--sc));padding-inline-start:calc(9px*var(--sc));
-  border-inline-start:2px dashed var(--line);margin-top:4px}
-.lbl{font-size:11.5px;color:var(--muted);margin-bottom:2px}
+.node{margin:0}
+.kidwrap{margin-inline-start:calc(10px * var(--sc));padding-inline-start:calc(10px * var(--sc));
+  border-inline-start:2px dashed var(--line);margin-top:6px}
+.kids{display:flex;flex-wrap:wrap;gap:calc(7px * var(--sc));margin:2px 0 8px}
+.pcard{position:relative;display:flex;gap:calc(7px * var(--sc));align-items:center;
+  background:var(--card2);border:1.5px solid var(--line);border-radius:calc(11px * var(--sc));
+  padding:calc(6px * var(--sc)) calc(11px * var(--sc));cursor:pointer;
+  font-family:var(--d);font-size:calc(17px * var(--sc));line-height:1.3;
+  max-width:100%;transition:.12s}
+.pcard:hover{border-color:var(--gold);background:var(--goldbg)}
+.pcard[data-sel="1"]{border-color:var(--ink);background:#fff;box-shadow:0 2px 10px rgba(60,40,10,.14)}
+.pcard.f{border-color:#E7BECD;background:var(--rosebg)}
+.pcard.f:hover{border-color:var(--rose)}
+.pcard.gap{border-style:dashed;border-color:var(--grey);background:var(--greybg);color:var(--muted)}
+.pcard .av{width:calc(27px * var(--sc));height:calc(27px * var(--sc));border-radius:50%;object-fit:cover;
+  background:var(--goldbg);border:1px solid var(--line);flex:none}
+.pcard .nm{font-weight:700}
+.pcard .cnt{font-family:var(--u);font-size:calc(10.5px * var(--sc));background:var(--green);color:#fff;
+  border-radius:999px;padding:0 calc(6px * var(--sc));font-weight:600;flex:none}
+.pcard.f .cnt{background:var(--rose)}
+.pcard .dot{width:7px;height:7px;border-radius:50%;flex:none}
+.dot.alive{background:var(--green)} .dot.dead{background:var(--grey)} .dot.unk{background:#D9C58E}
+.pcard .car{font-family:var(--u);font-size:calc(11px * var(--sc));color:var(--muted);flex:none}
 
-/* بطاقة الاسم */
-.sheet{position:fixed;inset-inline:10px;bottom:10px;z-index:40;max-width:430px;margin:0 auto;
-  background:var(--card);border:1.5px solid var(--gold);border-radius:14px;padding:13px 14px;
-  box-shadow:0 12px 40px rgba(60,38,18,.26);display:none}
+.chainbox{border:1px solid var(--line2);border-radius:10px;background:var(--card2);padding:10px 12px;margin-bottom:12px}
+.chainlist{display:flex;flex-wrap:wrap;gap:5px;font-family:var(--d);font-size:15.5px;margin-top:8px}
+.chainlist span{background:#fff;border:1px solid var(--line2);border-radius:999px;padding:3px 10px}
+.chainlist span.gapl{border-style:dashed;border-color:var(--grey);background:var(--greybg);color:var(--muted)}
+.chainlist span b{font-family:var(--u);font-size:10px;color:var(--muted);font-weight:500;margin-inline-end:4px}
+
+/* ── اللوحة الجانبية (بطاقة الشخص) ───────────────────── */
+.sheet{position:fixed;inset:auto 0 0 0;z-index:60;background:var(--card);border-top:2px solid var(--gold);
+  border-radius:16px 16px 0 0;box-shadow:0 -10px 40px rgba(50,35,10,.26);max-height:88vh;overflow:auto;
+  padding:14px 16px calc(20px + env(safe-area-inset-bottom,0px));display:none}
 .sheet.show{display:block}
-.sheet h3{font-size:24px;padding-inline-end:26px}
-.sheet .x{position:absolute;inset-inline-start:10px;top:8px;border:0;background:none;font-size:19px;
+@media(min-width:760px){.sheet{inset:0 auto 0 0;width:430px;max-width:92vw;border-radius:0 16px 16px 0;
+  border:0;border-inline-end:2px solid var(--gold);max-height:100vh;box-shadow:10px 0 40px rgba(50,35,10,.2)}}
+.sheet .x{position:absolute;inset-inline-start:12px;top:10px;border:0;background:none;font-size:20px;
   color:var(--muted);cursor:pointer}
-.nasab{font-family:var(--d);font-size:14.5px;color:var(--ink2);line-height:1.9;margin:6px 0 9px;
-  background:var(--card2);border:1px solid var(--line2);border-radius:10px;padding:8px 11px;
-  max-height:30vh;overflow:auto}
-.tg{font-size:11.5px;border:1px solid rgba(36,28,18,.18);border-radius:999px;padding:2px 9px;color:var(--muted)}
-.tg.al{color:var(--green);border-color:var(--green)}
+.sheet h2{font-size:26px;padding-inline-end:28px}
+.nasab{font-family:var(--d);font-size:15px;color:var(--ink2);line-height:1.9;margin:6px 0 10px;
+  background:var(--card2);border:1px solid var(--line2);border-radius:10px;padding:8px 11px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px;margin:8px 0}
+.facts dt{color:var(--muted)} .facts dd{margin:0;font-weight:500}
+.photo{width:100%;max-height:260px;object-fit:contain;border-radius:10px;border:1px solid var(--line);
+  background:var(--card2);margin-bottom:8px}
+
+/* ── جداول وقوائم ───────────────────────────────────── */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border:1px solid var(--line2);padding:6px 8px;text-align:start;vertical-align:top}
+th{background:var(--card2);font-weight:600}
+.tw{overflow-x:auto;border-radius:9px}
+.item{display:flex;gap:10px;align-items:center;border:1px solid var(--line2);border-radius:10px;
+  padding:9px 11px;margin-bottom:7px;background:var(--card2);flex-wrap:wrap}
+.item .gw{flex:1 1 160px;min-width:0}
+.item b{font-weight:600}
+
+/* ── ملاحظات ───────────────────────────────────────── */
 .note{border-inline-start:4px solid var(--gold);background:var(--goldbg);border-radius:0 9px 9px 0;
   padding:9px 12px;margin:10px 0;font-size:13.5px}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:14px}
-@media print{
-  .b,.sheet,#tools,footer{display:none!important}
-  body{background:#fff} .panel{border:0;padding:0;background:#fff}
-  .sub{break-inside:avoid}
-}
+.note.warn{border-color:var(--red);background:#FAEDE8}
+.note.ok{border-color:var(--green);background:var(--greenbg)}
+.toast{position:fixed;inset-inline:0;bottom:18px;z-index:90;display:flex;justify-content:center;pointer-events:none}
+.toast div{background:var(--ink);color:#FBF5E6;border-radius:999px;padding:9px 18px;font-size:13.5px;
+  box-shadow:0 8px 28px rgba(0,0,0,.3)}
+
+/* نصّ التوثيق المحفوظ */
+#refsbody h2{font-size:23px;margin-bottom:4px}
+#refsbody h3{font-size:18px;margin:20px 0 6px;color:var(--gold2)}
+#refsbody .chain{font-family:var(--d);font-size:16.5px;background:var(--card2);border:1px solid var(--line2);
+  border-radius:10px;padding:10px 12px;margin:8px 0;line-height:1.95}
+#refsbody .src{font-size:12.5px;color:var(--muted)}
+#refsbody .was{color:var(--red)} #refsbody .now{color:var(--green);font-weight:600}
+#refsbody table{font-size:12.5px}
+#refsbody ol{padding-inline-start:20px}
+#refsbody li{margin-bottom:6px}
+#refsbody .tablewrap{overflow-x:auto;border-radius:9px;margin:8px 0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body>
+</style>
+<style>@media print{.top,.treebar,.chainbox,.sheet,.toast{display:none!important}body{background:#fff}.panel{border:0;padding:0;background:#fff}.kidwrap{break-inside:avoid}}</style>
+</head><body><header class="top">
+  <div class="topin">
+    <div class="brand">آل النجّار<span>نسبُ البيت · الأنصار الخزرج</span></div>
+    <span class="tag vw" style="margin-inline-start:auto">للاطّلاع فقط</span>
+  </div>
+  <nav class="tabs" id="tabs" role="tablist">
+    <button class="tab" role="tab" data-v="home" aria-selected="true">الرئيسية</button>
+    <button class="tab" role="tab" data-v="tree" aria-selected="false">الشجرة</button>
+    <button class="tab" role="tab" data-v="refs" aria-selected="false">التوثيق والمراجع</button>
+  </nav>
+</header>
+
 <main>
-  <div class="unwan" id="unwan"></div>
-
-  <div class="panel" id="tools">
-    <div class="row">
-      <button class="b" id="girls">إظهار البنات</button>
-      <button class="b ic" id="zout" aria-label="تصغير">−</button>
-      <button class="b ic" id="zin" aria-label="تكبير">+</button>
-      <button class="b" id="openAll">فتح الكل</button>
-      <button class="b" id="closeAll">طيّ الكل</button>
-      <button class="b" id="prn">طباعة</button>
+  <section id="v-home">
+    <div class="panel">
+      <h2 id="homeTitle">آلُ النجّار</h2>
+      <p class="lede" id="homeSub"></p>
+      <div id="homeBody"></div>
+      <div class="hr"></div>
+      <div class="row" id="homeStats"></div>
+      <div class="hr"></div>
+      <h3>القائم على هذه الصفحة</h3>
+      <div id="homeKeeper"></div>
+      <button class="b edit" id="editHome" hidden></button>
     </div>
-    <div style="margin-top:8px"><input type="text" id="q" placeholder="ابحث عن اسم…"></div>
-    <div id="res" class="sm muted" style="margin-top:6px"></div>
-  </div>
+  </section>
 
-  <div class="panel">
-    <h2>جذعُ النسب</h2>
-    <p class="lede">السلسلةُ المتّصلة من آدم عليه السلام إلى الشيخ محمد النجّار — <span id="cn"></span> اسماً.</p>
-    <div class="chain" id="chain"></div>
-  </div>
+  <section id="v-tree" hidden>
+    <div class="panel">
+      <div class="unwan" id="unwan"></div>
+      <div class="treebar">
+        <button class="b" id="tGirls">إظهار البنات</button>
+        <button class="b ic" id="tZoomOut" aria-label="تصغير">−</button>
+        <button class="b ic" id="tZoomIn" aria-label="تكبير">+</button>
+        <button class="b" id="tAll">فتح الكل</button>
+        <button class="b" id="tNone">طيّ الكل</button>
+        <button class="b" id="tPrint">طباعة</button>
+        <input type="text" id="tSearch" placeholder="ابحث عن اسم…" style="flex:1 1 150px;min-width:120px">
+      </div>
+      <div class="chainbox">
+        <div class="row">
+          <b style="font-family:var(--d);font-size:17px">جذع النسب — من آدم عليه السلام إلى الشيخ محمد النجّار</b>
+          <button class="b sm" id="chainTog" style="margin-inline-start:auto">عرض السلسلة</button>
+        </div>
+        <div id="chainList" hidden></div>
+      </div>
+      <div class="crumbs" id="crumbs"></div>
+      <div id="treeBody"></div>
+    </div>
+  </section>
 
-  <div class="panel">
-    <h2>الفروعُ — بيتُ النجّار اليوم</h2>
-    <p class="lede">اضغط أيّ اسم لترى أبناءه ونسبه كاملاً.</p>
-    <div id="fam"></div>
-  </div>
-
-  <div class="panel">
-    <h2>كلمةٌ لا بدّ منها</h2>
-    <div class="note">بنو النجّار <b>أخوالُ</b> النبيّ ﷺ من جهة جدّه عبد المطّلب — فأمّه <b>سلمى بنت عمرو</b> النجاريّة — وليسوا من ذرّيّته. فليس في هذه الشجرة انتسابٌ إليه ﷺ نسبَ ولادة، وإنما هي خؤولةٌ ومصاهرةٌ ونصرةٌ وجوار، وهي في نفسها شرفٌ عظيمٌ يُستغنى به عن الزيادة.</div>
-    <p class="sm muted">وما بين <b>أبي منصور</b> و<b>عطا الله</b> من الأسماء لا مصدر منشور له، وإنما هو نسب العائلة المحفوظ بالتواتر، وقد أُثبت كما ورد. وما لم يتبيّن اتّصاله تُرك <b>حلقةً مفقودة</b> ولم يُفترض له وصلٌ لم يُتحقَّق منه.</p>
-  </div>
-  <footer>قائمةُ نسبِ آلِ النجّار · الأنصاريّون الخزرجيّون</footer>
+  <section id="v-refs" hidden>
+    <div class="panel"><div id="refsbody"></div></div>
+  </section>
 </main>
-<div class="sheet" id="sheet"><button class="x" id="sx" aria-label="إغلاق">✕</button><div id="sb"></div></div>
+
+<div class="sheet" id="sheet"><button class="x" id="sheetX" aria-label="إغلاق">✕</button><div id="sheetBody"></div></div>
+<div class="toast" id="toast" hidden><div></div></div>
 <script>
-const D = {"chain":[{"n":"آدم عليه السلام","g":0},{"n":"شيث","g":0},{"n":"أنوش","g":0},{"n":"قينان","g":0},{"n":"مهلائيل","g":0},{"n":"يرد","g":0},{"n":"أخنوخ وهو إدريس «ع»","g":0},{"n":"متوشلخ","g":0},{"n":"لامك","g":0},{"n":"نوح «ع»","g":0},{"n":"سام","g":0},{"n":"أرفخشذ","g":0},{"n":"شالخ","g":0},{"n":"عابر","g":0},{"n":"فالغ","g":0},{"n":"أرغو","g":0},{"n":"ساروغ","g":0},{"n":"ناحور","g":0},{"n":"تارح وهو آزر","g":0},{"n":"إبراهيم «ع»","g":0},{"n":"إسماعيل «ع»","g":0},{"n":"قيدار","g":0},{"n":"نبت","g":0},{"n":"تيمن","g":0},{"n":"الهميسع","g":0},{"n":"قحطان","g":0},{"n":"يعرب","g":0},{"n":"يشجب","g":0},{"n":"سبأ","g":0},{"n":"كهلان","g":0},{"n":"زيد","g":0},{"n":"مالك","g":0},{"n":"نبت","g":0},{"n":"الغوث","g":0},{"n":"الأزد","g":0},{"n":"مازن","g":0},{"n":"ثعلبة","g":0},{"n":"امرئ القيس (الشاعر)","g":0},{"n":"حارثة الغطريف","g":0},{"n":"عامر ماء السماء","g":0},{"n":"عمرو","g":0},{"n":"ثعلبة","g":0},{"n":"حارثة","g":0},{"n":"الخزرج الأكبر","g":0},{"n":"عمرو","g":0},{"n":"ثعلبة","g":0},{"n":"النجار واسمه تيم الله","g":0},{"n":"مالك","g":0},{"n":"غنم","g":0},{"n":"عبد عوف","g":0},{"n":"ثعلبة","g":0},{"n":"كليب","g":0},{"n":"زيد","g":0},{"n":"أبو أيوب الأنصاري — خالد","g":0},{"n":"أبي منصور","g":0},{"n":"الأشعب الاول","g":0},{"n":"شبرحيل","g":0},{"n":"مقوم","g":0},{"n":"الجنيد","g":0},{"n":"ثعلبة","g":0},{"n":"مت الثاني","g":0},{"n":"إبراهيم الأشعث","g":0},{"n":"سالم","g":0},{"n":"حسان","g":0},{"n":"زيد","g":0},{"n":"كثير","g":0},{"n":"عمر","g":0},{"n":"عبدالرحمن","g":0},{"n":"يوسف","g":0},{"n":"إبراهيم","g":0},{"n":"محمد","g":0},{"n":"فخر الدين","g":0},{"n":"أبو الوليد محمد","g":0},{"n":"رمضان اخلاص","g":0},{"n":"أبي بكر","g":0},{"n":"تقي الدين","g":0},{"n":"يوسف","g":0},{"n":"جمال الدين","g":0},{"n":"شهاب أحمد","g":0},{"n":"ولي الدين محمد","g":0},{"n":"شهاب الدين محمد","g":0},{"n":"قاضي جمال الدين","g":0},{"n":"إبراهيم","g":0},{"n":"أحمد","g":0},{"n":"نجيب","g":0},{"n":"سعيد","g":0},{"n":"عطا الله","g":0},{"n":"","g":1},{"n":"عبدالقادر","g":0},{"n":"الشيخ محمد النجار","g":0}],"fam":{"n":"الشيخ محمد النجار","f":0,"g":0,"s":2,"k":[{"n":"عبدالقادر","f":0,"g":0,"s":2,"k":[{"n":"إبراهيم","f":0,"g":0,"s":2,"k":[{"n":"نبيل","f":0,"g":0,"s":0,"k":[{"n":"سلطان","f":0,"g":0,"s":1,"k":[{"n":"نبيل","f":0,"g":0,"s":1},{"n":"سهل","f":0,"g":0,"s":1},{"n":"غالية","f":1,"g":0,"s":1}]},{"n":"روان","f":1,"g":0,"s":1},{"n":"غزل","f":1,"g":0,"s":1},{"n":"غدي","f":1,"g":0,"s":1},{"n":"هتان","f":0,"g":0,"s":1}]},{"n":"فريدة","f":1,"g":0,"s":2},{"n":"فوزي","f":0,"g":0,"s":0,"k":[{"n":"باسم","f":0,"g":0,"s":1,"k":[{"n":"مهند","f":0,"g":0,"s":1},{"n":"مؤيد","f":0,"g":0,"s":1},{"n":"جنى","f":1,"g":0,"s":1}]},{"n":"بندر","f":0,"g":0,"s":1,"k":[{"n":"خالد","f":0,"g":0,"s":1},{"n":"ريوف","f":1,"g":0,"s":1}]},{"n":"فايز","f":0,"g":0,"s":1,"k":[{"n":"جسار","f":0,"g":0,"s":1},{"n":"طلال","f":0,"g":0,"s":1},{"n":"بسمة","f":1,"g":0,"s":1}]},{"n":"فيصل","f":0,"g":0,"s":1},{"n":"أنس","f":0,"g":0,"s":1,"k":[{"n":"مالك","f":0,"g":0,"s":1},{"n":"ليلاس","f":1,"g":0,"s":1}]},{"n":"شهد","f":1,"g":0,"s":1}]},{"n":"سمير","f":0,"g":0,"s":2,"k":[{"n":"محمد","f":0,"g":0,"s":1},{"n":"وديع","f":0,"g":0,"s":1},{"n":"إبراهيم","f":0,"g":0,"s":1},{"n":"وسام","f":0,"g":0,"s":1},{"n":"أهداب","f":1,"g":0,"s":1},{"n":"ابتسام","f":1,"g":0,"s":1},{"n":"نعيمة","f":1,"g":0,"s":1},{"n":"مريم","f":1,"g":0,"s":1},{"n":"سلوى","f":1,"g":0,"s":1},{"n":"عبدالقادر","f":0,"g":0,"s":1}]},{"n":"ابتسام","f":1,"g":0,"s":2},{"n":"أديب","f":0,"g":0,"s":0,"k":[{"n":"وائل","f":0,"g":0,"s":1,"k":[{"n":"يوسف","f":0,"g":0,"s":1},{"n":"فاتن","f":1,"g":0,"s":1},{"n":"سلمى","f":1,"g":0,"s":1},{"n":"يحي","f":0,"g":0,"s":1}]},{"n":"رائد","f":0,"g":0,"s":1,"k":[{"n":"أديب","f":0,"g":0,"s":1},{"n":"تيم","f":0,"g":0,"s":1},{"n":"زين","f":0,"g":0,"s":1},{"n":"اياس","f":0,"g":0,"s":1},{"n":"اصيل","f":0,"g":0,"s":1},{"n":"قمر","f":1,"g":0,"s":1}]},{"n":"عبدالله","f":0,"g":0,"s":1},{"n":"محمد","f":0,"g":0,"s":1},{"n":"عبير","f":1,"g":0,"s":1},{"n":"حنين","f":1,"g":0,"s":1}]},{"n":"ايمن","f":0,"g":0,"s":0,"k":[{"n":"فتون","f":1,"g":0,"s":1},{"n":"راما","f":1,"g":0,"s":1},{"n":"تالة","f":1,"g":0,"s":1},{"n":"تاليا","f":1,"g":0,"s":1},{"n":"ابراهيم","f":0,"g":0,"s":1},{"n":"عز","f":0,"g":0,"s":1}]},{"n":"صباح","f":1,"g":0,"s":2},{"n":"عبدالقادر","f":0,"g":0,"s":2}]},{"n":"أحمد فخري","f":0,"g":0,"s":2}]},{"n":"عبدالرحمن","f":0,"g":0,"s":2},{"n":"مريم","f":1,"g":0,"s":2}]}};
-const ar = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
-const iso = n => "⁨" + ar(n) + "⁩";
+const REFS = `
+<h2>توثيق سلسلة النسب</h2>
+<p class="lede">تبيّن هذه الصفحة ثلاثة أمور: ما صُحّح في السلسلة ومصدر كل تصحيح، وما بقي على خلافٍ بين النسّابين، وما لا مصدر منشور له أصلاً. حُرّرت في ٤ أكتوبر ٢٠٢٦ م.</p>
+<div class="note">السلسلة الأصلية وصلت كما هي من العائلة، ولم يُحذف منها اسم إلا وسببه مذكور أدناه نصّاً. والتصحيح كان بمقابلة الأسماء على المصادر المذكورة في آخر الصفحة، وكلها متاحة على الشبكة بروابطها لمن أراد المراجعة بنفسه.</div>
+
+<h3>٠ · الأصل الذي قوبلت عليه هذه الشجرة</h3>
+<p>الأصل شجرة العائلة المرسومة باليد على هيئة نخلة: جِذعها سلسلة النسب من آدم عليه السلام صعوداً إلى <b>عطا الله</b>، ثم تتفرّع منه الأغصان والأوراق في الأجيال المتأخرة. ومكتوب في صدرها قوله تعالى في الأنصار: ﴿والذين تبوّؤوا الدار والإيمان من قبلهم… ويؤثرون على أنفسهم﴾، وفي حاشيتها إحالة إلى <b>صحيح البخاري — نسب الأنصار، رقم ٢٥٧٨</b>.</p>
+<div class="note"><b>نتيجة المقابلة:</b> قوبلت أسماء الجذع في هذه الصفحة على صور الشجرة الأصلية اسماً اسماً، فطابقت ما نُقل عنها مطابقة تامة. ومعنى ذلك أن المواضع المصحّحة أدناه — «وقيل» و«قيل» و«بنو الخزرج» و«يغوث» و«لقيا» وتبادل حارثة وثعلبة — ليست خطأ في النقل عن الشجرة، بل هي في <b>الشجرة الأصلية نفسها</b>. فالتصحيح هنا تصحيح لها، لا على ناقلها.</div>
+
+<h3>١ · من آدم إلى نوح عليهما السلام</h3>
+<p>خمسة أسماء كانت محرّفة، واثنان منها كان ترتيبهما مقلوباً: الصواب مهلائيل ثم يرد.</p>
+<div class="tablewrap"><table><tr><th>كان في القائمة</th><th>الصواب</th><th>الملاحظة</th></tr>
+<tr><td class="was">شعيب عليه السلام</td><td class="now">شيث</td><td>شعيب عليه السلام نبيٌّ متأخر في مَدْيَن، وليس ابن آدم</td></tr>
+<tr><td class="was">قنيان</td><td class="now">قينان</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">يزد</td><td class="now">مهلائيل</td><td>الاسم والموضع</td></tr>
+<tr><td class="was">صلدئيل</td><td class="now">يرد</td><td>الاسم والموضع</td></tr>
+<tr><td class="was">متشولم</td><td class="now">متوشلخ</td><td>تحريف في الضبط</td></tr></table></div>
+<p>فصارت السلسلة كما ترد بلفظها في المصادر:</p>
+<div class="chain">نوح بن لامَك بن متوشلخ بن أخنوخ — وهو إدريس — بن يرد بن مهلائيل بن قينان بن أنوش بن شيث بن آدم</div>
+<p class="src">المرجعان ٢ و٣.</p>
+
+<h3>٢ · من نوح إلى إبراهيم عليهما السلام</h3>
+<p>كان في هذا القسم خمسة أجيال ساقطة، وسببها واضح: كلمة <b>«وقيل»</b> التي كانت في موضع اسم ليست اسماً، بل هي أول عبارة «وقيل…» في نصٍّ يذكر رأياً آخر في النسب؛ فالتقطها الناسخ على أنها اسم رجل، وطُوي معها ما بعدها. ووقعت الآفة نفسها مرة ثانية في القسم الثالث.</p>
+<div class="tablewrap"><table><tr><th>كان في القائمة</th><th>الصواب</th><th>الملاحظة</th></tr>
+<tr><td class="was">فخشيد</td><td class="now">أرفخشذ</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">عابد</td><td class="now">عابر</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">وقيل</td><td class="now">فالغ</td><td>«وقيل» ليست اسماً</td></tr>
+<tr><td class="was">—</td><td class="now">أرغو</td><td>جيل مضاف</td></tr>
+<tr><td class="was">—</td><td class="now">ساروغ</td><td>جيل مضاف</td></tr>
+<tr><td class="was">—</td><td class="now">ناحور</td><td>جيل مضاف</td></tr>
+<tr><td class="was">—</td><td class="now">تارح وهو آزر</td><td>جيل مضاف — وهو أبو إبراهيم، وسُمّي في القرآن آزر</td></tr></table></div>
+<div class="chain">إبراهيم بن تارح — وهو آزر — بن ناحور بن ساروغ بن أرغو بن فالغ بن عابر بن شالخ بن أرفخشذ بن سام بن نوح</div>
+<p class="src">المرجع ٤. وفيه اختلافان معروفان ينبغي التنبيه عليهما: بعض المصادر تزيد «قينان» بين أرفخشذ وشالخ، وبعضها يجعل «عابر» هو هود عليه السلام. وأُثبت هنا الأشهر.</p>
+
+<h3>٣ · من إسماعيل إلى قحطان</h3>
+<div class="tablewrap"><table><tr><th>كان في القائمة</th><th>الصواب</th><th>الملاحظة</th></tr>
+<tr><td class="was">قيدا</td><td class="now">قيدار</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">نبيت</td><td class="now">نبت</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">تيم</td><td class="now">تيمن</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">القميع</td><td class="now">الهميسع</td><td>تحريف في الضبط</td></tr>
+<tr><td class="was">قيل</td><td class="now">حُذف</td><td>«وقيل» مرة ثانية — لا وجود لاسم بينهما في المصادر</td></tr></table></div>
+<div class="chain">قحطان بن الهميسع بن تيمن بن نبت بن قيدار بن إسماعيل عليه السلام</div>
+<div class="note warn"><b>تنبيه لا بد منه:</b> وصل قحطان بإسماعيل عليه السلام قولٌ موجود في كتب الأنساب، لكنه ليس قول الأكثر. فجمهور النسّابين يفرّقون بين العرب القحطانية — وهم أهل اليمن، ومنهم الأزد والخزرج والأنصار — والعرب العدنانية من ذرية إسماعيل، ويجعلون قحطان أقدم من إسماعيل لا من ولده. وأُبقي هذا الوصل كما ورد في قائمة العائلة ولم يُغيَّر، وصُحّحت أسماؤه فقط، لأن تغييره قرار يرجع إلى أهل العائلة لا إلى مقابلة نصوص.</div>
+
+<h3>٤ · من قحطان إلى الأزد</h3>
+<div class="tablewrap"><table><tr><th>كان في القائمة</th><th>الصواب</th><th>الملاحظة</th></tr>
+<tr><td class="was">يغوث</td><td class="now">الغوث</td><td>تحريف في الضبط</td></tr></table></div>
+<div class="chain">الأزد بن الغوث بن نبت بن مالك بن زيد بن كهلان بن سبأ بن يشجب بن يعرب بن قحطان</div>
+<p class="src">المرجع ٥. وهذه السلسلة ترد بهذا اللفظ عينه في كتب الأنساب.</p>
+
+<h3>٥ · من الأزد إلى النجار وأبي أيوب الأنصاري</h3>
+<p>هذا أهم قسم في الشجرة لأنه موضع اتصال العائلة بالأنصار، وكان فيه أكثر الخلل.</p>
+<div class="tablewrap"><table><tr><th>كان في القائمة</th><th>الصواب</th><th>الملاحظة</th></tr>
+<tr><td class="was">بنو الخزرج</td><td class="now">الخزرج الأكبر</td><td>«بنو الخزرج» اسم قبيلة لا اسم رجل؛ والمراد الجد نفسه</td></tr>
+<tr><td class="was">ثعلبة ثم حارثة</td><td class="now">حارثة ثم ثعلبة</td><td>كان موضعهما متبادلاً فوق الخزرج</td></tr>
+<tr><td class="was">لقيا</td><td class="now">حُذف</td><td>محرّف عن «عمرو»، وقد تكرّر فصار اسمين</td></tr>
+<tr><td class="was">حارثة (تحت الخزرج)</td><td class="now">عمرو</td><td>فالنجار بن ثعلبة بن عمرو بن الخزرج</td></tr>
+<tr><td class="was">تيم الله بن النجار</td><td class="now">النجار واسمه تيم الله</td><td>رجل واحد لا رجلان: النجار لقبه وتيم الله اسمه</td></tr></table></div>
+<p>فصار نسب أبي أيوب الأنصاري رضي الله عنه على ما في المصادر:</p>
+<div class="chain">خالد بن زيد بن كليب بن ثعلبة بن عبد عوف بن غنم بن مالك بن النجار — واسمه تيم الله — بن ثعلبة بن عمرو بن الخزرج الأكبر بن حارثة بن ثعلبة بن عمرو بن عامر ماء السماء بن حارثة الغطريف بن امرئ القيس بن ثعلبة بن مازن بن الأزد</div>
+<p class="src">المرجعان ٦ و٧. ويرد في بعض المصادر «ثعلبة بن عبد بن عوف» بفصل عبد عن عوف، وفي بعضها زيادة «عمرو» بين ثعلبة وعبد عوف؛ وأُثبت هنا الأشهر.</p>
+
+<h3>٦ · بنو النجار في السنّة، وصلتهم بالنبي ﷺ</h3>
+<p>هذه العائلة من <b>بني النجار</b>، وهم بطنٌ من الخزرج من الأنصار، كما تبيّن في القسم الخامس. ولهم في السنّة ذكران ثابتان:</p>
+
+<p><b>الأول — تقديمهم على دور الأنصار.</b> قال النبي ﷺ:</p>
+<div class="chain">«خَيْرُ دُورِ الأنصارِ بَنُو النَّجَّارِ، ثُمَّ بَنُو عَبْدِ الأشْهَلِ، ثُمَّ بَنُو الحارِثِ بنِ الخَزْرَجِ، ثُمَّ بَنُو ساعِدَةَ، وفي كُلِّ دُورِ الأنصارِ خَيْرٌ»</div>
+<p>رواه أبو أُسَيْد الساعدي رضي الله عنه. أخرجه البخاري في مناقب الأنصار، باب فضل دور الأنصار، برقم ٣٥٧٨–٣٥٨٠، وأخرجه مسلم في فضائل الصحابة، باب في خير دور الأنصار. ولمّا سمعه سعد بن عبادة قال: «يا رسول الله، خير دور الأنصار فجُعلنا آخراً»، فقال ﷺ: «أوَليس بحسبكم أن تكونوا من الخيار».</p>
+<p class="src">المرجع ٨. وفي حاشية الشجرة الأصلية إحالة إلى «صحيح البخاري — نسب الأنصار رقم ٢٥٧٨»، ويغلب على الظن أنها تعني هذا الحديث وأن رقمه سقطت منه خانة، والصواب ٣٥٧٨؛ ولم أقطع بذلك.</p>
+
+<p><b>الثاني — أنهم أخوال النبي ﷺ.</b> تزوّج هاشم بن عبد مناف <b>سلمى بنت عمرو</b> النجارية، من بني عدي بن النجار بيثرب، فولدت له <b>عبد المطلب</b> جدَّ النبي ﷺ. فصار بنو النجار أخوال عبد المطلب، ومن ثَمّ أخوال عبد الله أبي النبي ﷺ، ولذلك كان ﷺ يسمّيهم أخواله. وتوفي عبد الله رضي الله عنه بالمدينة عند أخواله بني عدي بن النجار. ولمّا هاجر النبي ﷺ نزل في بني النجار، في بيت <b>أبي أيوب الأنصاري</b> رضي الله عنه — وهو جدٌّ في هذه الشجرة.</p>
+<p class="src">المرجع ٩.</p>
+
+<div class="note warn"><b>تفريق لا يصح إغفاله:</b> بنو النجار <b>أخوال</b> النبي ﷺ من جهة جدّه عبد المطلب، وليسوا من ذريّته. فليس في هذه الشجرة — ولا في الشجرة الأصلية — انتسابٌ إلى النبي ﷺ نسبَ ولادة، وإنما هي صلة خؤولة ومصاهرة ونصرة وجوار، وهي في نفسها شرف عظيم يُستغنى به عن الزيادة. وما جاوز هذا الحدّ من دعوى الانحدار منه ﷺ فلا أصل له، وذكره على وجهه أنفع للعائلة وأبقى.</div>
+
+<h3>٧ · ما لا مصدر منشور له</h3>
+<div class="note warn">الأسماء من <b>أبي منصور</b> نزولاً إلى <b>عطا الله</b> — وهي ثلاثة وثلاثون اسماً تلي أبا أيوب الأنصاري — لم أجد لها مصدراً منشوراً أقابلها عليه، فهي نسب العائلة الخاص. وقد أُثبتت كما وردت في قائمة العائلة حرفاً بحرف، ولم يُصحّح فيها شيء ولم يُحذف منها شيء. ومرجعها الوحيد هو شجرة العائلة المحفوظة وما عند كبار العائلة من توثيق، فهي موضع المراجعة والتصديق منهم.</div>
+<p>وهذه الأسماء موجودة في جذع الشجرة الأصلية وطابقت المنقول عنها، لكن الشجرة نفسها لم تذكر لها سنداً، فهي محفوظة بالتواتر في العائلة.</p>
+<p>وأما ما فوق <b>عطا الله</b> فالشجرة الأصلية تتفرّع فيه إلى عشرات الأوراق من أبنائه وأحفاده، ولم يُدخَل منها هنا إلا ما تأكّد؛ وما لم يتبيّن اتصاله أُثبت على هيئة <b>«حلقة مفقودة»</b> — عقدة رمادية بإطار متقطع — ولم يُفترض اتصال لم يُتحقّق منه.</p>
+
+<h3>تحرّزات علمية لا بد من ذكرها</h3>
+<ol>
+<li><b>ما فوق عدنان موضع تحرّز عند أهل العلم.</b> يُروى أن النبي ﷺ كان إذا بلغ عدنان في النسب أمسك وقال: «كذب النسّابون»، ونهى الإمام مالك وغيره عن تجاوزه. فما كان في هذه الشجرة فوق ذلك فهو من قبيل المنقول في كتب التاريخ لا المقطوع به.</li>
+<li><b>أسماء ما بين آدم وإبراهيم عليهما السلام مصدرها إسرائيلي.</b> نقلها المؤرخون المسلمون كالطبري وابن الأثير وابن كثير عن أهل الكتاب، وذكروها على وجه الحكاية لا التصحيح، ولذلك يتفاوت ضبطها من كتاب لكتاب: مهلائيل ومهلاييل، وأرغو ورعو، وتارح وتارخ.</li>
+<li><b>طول السلسلة نفسه مظنّة الاختصار.</b> سبعة وثمانون جيلاً من آدم إلى اليوم عددٌ أقل بكثير مما تقتضيه المدة، وهذا معروف في سلاسل النسب الطويلة: تُحفظ أسماء المشاهير وتُطوى الأجيال بينها. فالمقصود من مثل هذه الشجرة سلسلة الأعلام المعروفة، لا إحصاء كل جيل.</li>
+</ol>
+
+<h3>المراجع</h3>
+<ol>
+<li><b>شجرة العائلة الأصلية المرسومة باليد</b> — وهي الأصل في أسماء الجذع كلها وفي الفروع المتأخرة، وفيها الإحالة إلى صحيح البخاري، نسب الأنصار رقم ٢٥٧٨.</li>
+<li>ابن الأثير، <b>الكامل في التاريخ</b> — ذكر شيث بن آدم عليه السلام. <a href="https://www.islamweb.net/ar/library/content/126/17/" target="_blank" rel="noopener">المكتبة الإسلامية — إسلام ويب</a></li>
+<li>نسب نوح عليه السلام بلفظه متصلاً إلى آدم. <a href="https://www.harariyy.org/LibrarySite/km/qan/quissass1.php?bk=35qan" target="_blank" rel="noopener">قصص الأنبياء — نسب نوح عليه السلام</a></li>
+<li>تارح — وهو آزر أبو إبراهيم — وسلسلة النسب من نوح إلى إبراهيم. <a href="https://www.marefa.org/%D8%AA%D8%A7%D8%B1%D8%AD" target="_blank" rel="noopener">موسوعة المعرفة</a></li>
+<li>نسب الأزد بن الغوث إلى قحطان. <a href="https://shamela.ws/book/491/218" target="_blank" rel="noopener">المكتبة الشاملة</a></li>
+<li>الذهبي، <b>سير أعلام النبلاء</b> — أبو أيوب الأنصاري. <a href="https://ar.wikisource.org/wiki/%D8%B3%D9%8A%D8%B1_%D8%A3%D8%B9%D9%84%D8%A7%D9%85_%D8%A7%D9%84%D9%86%D8%A8%D9%84%D8%A7%D8%A1/%D8%A3%D8%A8%D9%88_%D8%A3%D9%8A%D9%88%D8%A8_%D8%A7%D9%84%D8%A3%D9%86%D8%B5%D8%A7%D8%B1%D9%8A" target="_blank" rel="noopener">ويكي مصدر</a></li>
+<li>نسب أبي أيوب الأنصاري خالد بن زيد مجموعاً. <a href="https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88_%D8%A3%D9%8A%D9%88%D8%A8_%D8%A7%D9%84%D8%A3%D9%86%D8%B5%D8%A7%D8%B1%D9%8A" target="_blank" rel="noopener">موسوعة ويكيبيديا العربية</a></li>
+<li><b>صحيح البخاري</b> — كتاب مناقب الأنصار، باب فضل دور الأنصار، حديث «خير دور الأنصار بنو النجار». <a href="https://bukhari.lna.io/6279/" target="_blank" rel="noopener">نصّ الحديث وتخريجه</a> · <a href="https://www.islamweb.net/ar/library/content/52/6881/%D8%A8%D8%A7%D8%A8-%D9%81%D8%B6%D9%84-%D8%AF%D9%88%D8%B1-%D8%A7%D9%84%D8%A3%D9%86%D8%B5%D8%A7%D8%B1" target="_blank" rel="noopener">فتح الباري — شرح الباب</a> · <a href="https://www.islamweb.net/ar/library/content/1/4640/%D8%A8%D8%A7%D8%A8-%D9%81%D9%8A-%D8%AE%D9%8A%D8%B1-%D8%AF%D9%88%D8%B1-%D8%A7%D9%84%D8%A3%D9%86%D8%B5%D8%A7%D8%B1" target="_blank" rel="noopener">صحيح مسلم</a></li>
+<li>سلمى بنت عمرو النجارية أمّ عبد المطلب، وخؤولة بني عدي بن النجار للنبي ﷺ. <a href="https://shamela.ws/book/26484/473" target="_blank" rel="noopener">الجوهرة في نسب النبي وأصحابه العشرة — أمهات بني عبد المطلب</a> · <a href="https://islamweb.net/ar/library/index.php?page=bookcontents&amp;idfrom=196&amp;idto=196&amp;bk_no=58&amp;ID=137" target="_blank" rel="noopener">السيرة النبوية لابن هشام — سبب خؤولة بني عدي بن النجار</a></li>
+</ol>
+<p class="src">المرجع ٨ أعلاها جميعاً فهو من الصحيحين. والمراجع ٢ و٣ و٥ و٦ و٩ كتبُ أنساب وتاريخ معتبرة، والمرجعان ٤ و٧ موسوعتان تُراجَع عليهما الأسماء ولا يُستدل بهما وحدهما. والمرجع ١ هو أصل العائلة نفسه.</p>
+`;
+
+/* ═══════════ نسخة الاطّلاع — بلا إضافة ولا تعديل ═══════════ */
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const $ = s => document.querySelector(s);
-const NM = x => x.g ? "حلقة مفقودة" : (x.n || "—");
-const MILE = {
-  "آدم عليه السلام":"أبو البشر", "أخنوخ وهو إدريس «ع»":"إدريس النبيّ", "نوح «ع»":"نوح النبيّ",
-  "إبراهيم «ع»":"خليل الرحمن", "إسماعيل «ع»":"جدّ العرب", "قحطان":"جدّ القحطانيّة",
-  "الأزد":"من اليمن", "الخزرج الأكبر":"أحد بطني الأنصار",
-  "النجار واسمه تيم الله":"وإليه تُنسب العائلة", "أبو أيوب الأنصاري — خالد":"نزل النبيّ ﷺ في بيته",
-  "عطا الله":"آخر المعروف قبل الفجوة", "الشيخ محمد النجار":"رأس البيت"
-};
+const ar  = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
+const iso = n => "⁨" + ar(n) + "⁩";
+const BASE = "people", ADD = "additions";
 
-/* ── الجذع ── */
-const C = D.chain;
-$("#cn").textContent = iso(C.length);
-$("#chain").innerHTML = C.map((x, i) =>
-  `<div class="cr ${x.g?"gap":""}"><span class="n">${ar(i+1)}</span>
-   <span class="v" data-c="${i}">${esc(NM(x))}</span>
-   ${MILE[x.n] ? `<span class="tagm">${esc(MILE[x.n])}</span>` : ""}</div>`).join("");
+const S = { user:null, db:null, assets:null, P:{}, meta:{}, members:{}, requests:{}, docs:{}, board:{},
+            me:{id:null,name:"",avatar:"",owner:false,editor:false,write:false},
+            girls:false, open:{}, focus:null, sc:1, root:null, editing:null, fullNasab:false };
+try{ S.girls = localStorage.getItem("njrv.g")==="1"; }catch(e){}
+try{ S.sc = +localStorage.getItem("njrv.sc") || 1; }catch(e){}
+[{"id": "p001", "name": "آدم عليه السلام", "gender": "m", "gap": false, "parentId": null, "order": 0, "status": "", "_c": "people"}, {"id": "p002", "name": "شيث", "gender": "m", "gap": false, "parentId": "p001", "order": 0, "status": "", "_c": "people"}, {"id": "p003", "name": "أنوش", "gender": "m", "gap": false, "parentId": "p002", "order": 0, "status": "", "_c": "people"}, {"id": "p004", "name": "قينان", "gender": "m", "gap": false, "parentId": "p003", "order": 0, "status": "", "_c": "people"}, {"id": "p005", "name": "مهلائيل", "gender": "m", "gap": false, "parentId": "p004", "order": 0, "status": "", "_c": "people"}, {"id": "p006", "name": "يرد", "gender": "m", "gap": false, "parentId": "p005", "order": 0, "status": "", "_c": "people"}, {"id": "p007", "name": "أخنوخ وهو إدريس «ع»", "gender": "m", "gap": false, "parentId": "p006", "order": 0, "status": "", "_c": "people"}, {"id": "p008", "name": "متوشلخ", "gender": "m", "gap": false, "parentId": "p007", "order": 0, "status": "", "_c": "people"}, {"id": "p009", "name": "لامك", "gender": "m", "gap": false, "parentId": "p008", "order": 0, "status": "", "_c": "people"}, {"id": "p010", "name": "نوح «ع»", "gender": "m", "gap": false, "parentId": "p009", "order": 0, "status": "", "_c": "people"}, {"id": "p011", "name": "سام", "gender": "m", "gap": false, "parentId": "p010", "order": 0, "status": "", "_c": "people"}, {"id": "p012", "name": "أرفخشذ", "gender": "m", "gap": false, "parentId": "p011", "order": 0, "status": "", "_c": "people"}, {"id": "p013", "name": "شالخ", "gender": "m", "gap": false, "parentId": "p012", "order": 0, "status": "", "_c": "people"}, {"id": "p014", "name": "عابر", "gender": "m", "gap": false, "parentId": "p013", "order": 0, "status": "", "_c": "people"}, {"id": "p015", "name": "فالغ", "gender": "m", "gap": false, "parentId": "p014", "order": 0, "status": "", "_c": "people"}, {"id": "p015a", "name": "أرغو", "gender": "m", "gap": false, "parentId": "p015", "order": 0, "status": "", "_c": "people"}, {"id": "p015b", "name": "ساروغ", "gender": "m", "gap": false, "parentId": "p015a", "order": 0, "status": "", "_c": "people"}, {"id": "p015c", "name": "ناحور", "gender": "m", "gap": false, "parentId": "p015b", "order": 0, "status": "", "_c": "people"}, {"id": "p015d", "name": "تارح وهو آزر", "gender": "m", "gap": false, "parentId": "p015c", "order": 0, "status": "", "_c": "people"}, {"id": "p016", "name": "إبراهيم «ع»", "gender": "m", "gap": false, "parentId": "p015d", "order": 0, "status": "", "_c": "people"}, {"id": "p017", "name": "إسماعيل «ع»", "gender": "m", "gap": false, "parentId": "p016", "order": 0, "status": "", "_c": "people"}, {"id": "p018", "name": "قيدار", "gender": "m", "gap": false, "parentId": "p017", "order": 0, "status": "", "_c": "people"}, {"id": "p019", "name": "نبت", "gender": "m", "gap": false, "parentId": "p018", "order": 0, "status": "", "_c": "people"}, {"id": "p020", "name": "تيمن", "gender": "m", "gap": false, "parentId": "p019", "order": 0, "status": "", "_c": "people"}, {"id": "p021", "name": "الهميسع", "gender": "m", "gap": false, "parentId": "p020", "order": 0, "status": "", "_c": "people"}, {"id": "p023", "name": "قحطان", "gender": "m", "gap": false, "parentId": "p021", "order": 0, "status": "", "_c": "people"}, {"id": "p024", "name": "يعرب", "gender": "m", "gap": false, "parentId": "p023", "order": 0, "status": "", "_c": "people"}, {"id": "p025", "name": "يشجب", "gender": "m", "gap": false, "parentId": "p024", "order": 0, "status": "", "_c": "people"}, {"id": "p026", "name": "سبأ", "gender": "m", "gap": false, "parentId": "p025", "order": 0, "status": "", "_c": "people"}, {"id": "p027", "name": "كهلان", "gender": "m", "gap": false, "parentId": "p026", "order": 0, "status": "", "_c": "people"}, {"id": "p028", "name": "زيد", "gender": "m", "gap": false, "parentId": "p027", "order": 0, "status": "", "_c": "people"}, {"id": "p029", "name": "مالك", "gender": "m", "gap": false, "parentId": "p028", "order": 0, "status": "", "_c": "people"}, {"id": "p030", "name": "نبت", "gender": "m", "gap": false, "parentId": "p029", "order": 0, "status": "", "_c": "people"}, {"id": "p031", "name": "الغوث", "gender": "m", "gap": false, "parentId": "p030", "order": 0, "status": "", "_c": "people"}, {"id": "p032", "name": "الأزد", "gender": "m", "gap": false, "parentId": "p031", "order": 0, "status": "", "_c": "people"}, {"id": "p033", "name": "مازن", "gender": "m", "gap": false, "parentId": "p032", "order": 0, "status": "", "_c": "people"}, {"id": "p034", "name": "ثعلبة", "gender": "m", "gap": false, "parentId": "p033", "order": 0, "status": "", "_c": "people"}, {"id": "p035", "name": "امرئ القيس (الشاعر)", "gender": "m", "gap": false, "parentId": "p034", "order": 0, "status": "", "_c": "people"}, {"id": "p036", "name": "حارثة الغطريف", "gender": "m", "gap": false, "parentId": "p035", "order": 0, "status": "", "_c": "people"}, {"id": "p037", "name": "عامر ماء السماء", "gender": "m", "gap": false, "parentId": "p036", "order": 0, "status": "", "_c": "people"}, {"id": "p038", "name": "عمرو", "gender": "m", "gap": false, "parentId": "p037", "order": 0, "status": "", "_c": "people"}, {"id": "p040", "name": "ثعلبة", "gender": "m", "gap": false, "parentId": "p038", "order": 0, "status": "", "_c": "people"}, {"id": "p041", "name": "حارثة", "gender": "m", "gap": false, "parentId": "p040", "order": 0, "status": "", "_c": "people"}, {"id": "p042", "name": "الخزرج الأكبر", "gender": "m", "gap": false, "parentId": "p041", "order": 0, "status": "", "_c": "people"}, {"id": "p043", "name": "عمرو", "gender": "m", "gap": false, "parentId": "p042", "order": 0, "status": "", "_c": "people"}, {"id": "p044", "name": "ثعلبة", "gender": "m", "gap": false, "parentId": "p043", "order": 0, "status": "", "_c": "people"}, {"id": "p045", "name": "النجار واسمه تيم الله", "gender": "m", "gap": false, "parentId": "p044", "order": 0, "status": "", "_c": "people"}, {"id": "p046", "name": "مالك", "gender": "m", "gap": false, "parentId": "p045", "order": 0, "status": "", "_c": "people"}, {"id": "p047", "name": "غنم", "gender": "m", "gap": false, "parentId": "p046", "order": 0, "status": "", "_c": "people"}, {"id": "p048", "name": "عبد عوف", "gender": "m", "gap": false, "parentId": "p047", "order": 0, "status": "", "_c": "people"}, {"id": "p049", "name": "ثعلبة", "gender": "m", "gap": false, "parentId": "p048", "order": 0, "status": "", "_c": "people"}, {"id": "p050", "name": "كليب", "gender": "m", "gap": false, "parentId": "p049", "order": 0, "status": "", "_c": "people"}, {"id": "p051", "name": "زيد", "gender": "m", "gap": false, "parentId": "p050", "order": 0, "status": "", "_c": "people"}, {"id": "p052", "name": "أبو أيوب الأنصاري — خالد", "gender": "m", "gap": false, "parentId": "p051", "order": 0, "status": "", "_c": "people"}, {"id": "p053", "name": "أبي منصور", "gender": "m", "gap": false, "parentId": "p052", "order": 0, "status": "", "_c": "people"}, {"id": "p054", "name": "الأشعب الاول", "gender": "m", "gap": false, "parentId": "p053", "order": 0, "status": "", "_c": "people"}, {"id": "p055", "name": "شبرحيل", "gender": "m", "gap": false, "parentId": "p054", "order": 0, "status": "", "_c": "people"}, {"id": "p056", "name": "مقوم", "gender": "m", "gap": false, "parentId": "p055", "order": 0, "status": "", "_c": "people"}, {"id": "p057", "name": "الجنيد", "gender": "m", "gap": false, "parentId": "p056", "order": 0, "status": "", "_c": "people"}, {"id": "p058", "name": "ثعلبة", "gender": "m", "gap": false, "parentId": "p057", "order": 0, "status": "", "_c": "people"}, {"id": "p059", "name": "مت الثاني", "gender": "m", "gap": false, "parentId": "p058", "order": 0, "status": "", "_c": "people"}, {"id": "p060", "name": "إبراهيم الأشعث", "gender": "m", "gap": false, "parentId": "p059", "order": 0, "status": "", "_c": "people"}, {"id": "p061", "name": "سالم", "gender": "m", "gap": false, "parentId": "p060", "order": 0, "status": "", "_c": "people"}, {"id": "p062", "name": "حسان", "gender": "m", "gap": false, "parentId": "p061", "order": 0, "status": "", "_c": "people"}, {"id": "p063", "name": "زيد", "gender": "m", "gap": false, "parentId": "p062", "order": 0, "status": "", "_c": "people"}, {"id": "p064", "name": "كثير", "gender": "m", "gap": false, "parentId": "p063", "order": 0, "status": "", "_c": "people"}, {"id": "p065", "name": "عمر", "gender": "m", "gap": false, "parentId": "p064", "order": 0, "status": "", "_c": "people"}, {"id": "p066", "name": "عبدالرحمن", "gender": "m", "gap": false, "parentId": "p065", "order": 0, "status": "", "_c": "people"}, {"id": "p067", "name": "يوسف", "gender": "m", "gap": false, "parentId": "p066", "order": 0, "status": "", "_c": "people"}, {"id": "p068", "name": "إبراهيم", "gender": "m", "gap": false, "parentId": "p067", "order": 0, "status": "", "_c": "people"}, {"id": "p069", "name": "محمد", "gender": "m", "gap": false, "parentId": "p068", "order": 0, "status": "", "_c": "people"}, {"id": "p070", "name": "فخر الدين", "gender": "m", "gap": false, "parentId": "p069", "order": 0, "status": "", "_c": "people"}, {"id": "p071", "name": "أبو الوليد محمد", "gender": "m", "gap": false, "parentId": "p070", "order": 0, "status": "", "_c": "people"}, {"id": "p072", "name": "رمضان اخلاص", "gender": "m", "gap": false, "parentId": "p071", "order": 0, "status": "", "_c": "people"}, {"id": "p073", "name": "أبي بكر", "gender": "m", "gap": false, "parentId": "p072", "order": 0, "status": "", "_c": "people"}, {"id": "p074", "name": "تقي الدين", "gender": "m", "gap": false, "parentId": "p073", "order": 0, "status": "", "_c": "people"}, {"id": "p075", "name": "يوسف", "gender": "m", "gap": false, "parentId": "p074", "order": 0, "status": "", "_c": "people"}, {"id": "p076", "name": "جمال الدين", "gender": "m", "gap": false, "parentId": "p075", "order": 0, "status": "", "_c": "people"}, {"id": "p077", "name": "شهاب أحمد", "gender": "m", "gap": false, "parentId": "p076", "order": 0, "status": "", "_c": "people"}, {"id": "p078", "name": "ولي الدين محمد", "gender": "m", "gap": false, "parentId": "p077", "order": 0, "status": "", "_c": "people"}, {"id": "p079", "name": "شهاب الدين محمد", "gender": "m", "gap": false, "parentId": "p078", "order": 0, "status": "", "_c": "people"}, {"id": "p080", "name": "قاضي جمال الدين", "gender": "m", "gap": false, "parentId": "p079", "order": 0, "status": "", "_c": "people"}, {"id": "p082", "name": "إبراهيم", "gender": "m", "gap": false, "parentId": "p080", "order": 0, "status": "", "_c": "people"}, {"id": "p083", "name": "أحمد", "gender": "m", "gap": false, "parentId": "p082", "order": 0, "status": "", "_c": "people"}, {"id": "p084", "name": "نجيب", "gender": "m", "gap": false, "parentId": "p083", "order": 0, "status": "", "_c": "people"}, {"id": "p085", "name": "سعيد", "gender": "m", "gap": false, "parentId": "p084", "order": 0, "status": "", "_c": "people"}, {"id": "p086", "name": "عطا الله", "gender": "m", "gap": false, "parentId": "p085", "order": 0, "status": "", "_c": "people"}, {"id": "05ygag1wddlwdue10hjm", "name": "غالية", "gender": "f", "gap": false, "parentId": "s007", "order": 2, "status": "alive", "_c": "additions"}, {"id": "0vbxknsoshad6csrht58", "name": "أنس", "gender": "m", "gap": false, "parentId": "p13nysosecg6cs3bte01", "order": 5, "status": "alive", "_c": "additions"}, {"id": "1fbkve7fyn6qso74x9n9", "name": "ابراهيم", "gender": "m", "gap": false, "parentId": "ahqwsomxc8qjxikvcqhl", "order": 4, "status": "alive", "_c": "additions"}, {"id": "1yi6u5h8440czlz4apwf", "name": "نبيل", "gender": "m", "gap": false, "parentId": "s007", "order": 0, "status": "alive", "_c": "additions"}, {"id": "20fyuh79qekfh18r7m94", "name": "طلال", "gender": "m", "gap": false, "parentId": "l6r2n1r80m8kjqv84vrr", "order": 2, "status": "alive", "_c": "additions"}, {"id": "2afvh3ylgy2au4hd4l3z", "name": "مالك", "gender": "m", "gap": false, "parentId": "0vbxknsoshad6csrht58", "order": 0, "status": "alive", "_c": "additions"}, {"id": "3cithyv1e413iayo431k", "name": "ابتسام", "gender": "f", "gap": false, "parentId": "s005", "order": 4, "status": "dead", "_c": "additions"}, {"id": "4dbp07y5vszc3qophsg5", "name": "ابتسام", "gender": "f", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 5, "status": "alive", "_c": "additions"}, {"id": "4kox7mn65yzp3jbqux77", "name": "روان", "gender": "f", "gap": false, "parentId": "s006", "order": 1, "status": "alive", "_c": "additions"}, {"id": "4muwnrxnc6ufpzxo9gpx", "name": "ليلاس", "gender": "f", "gap": false, "parentId": "0vbxknsoshad6csrht58", "order": 1, "status": "alive", "_c": "additions"}, {"id": "4q6tc2hly8v7419gpv60", "name": "زين", "gender": "m", "gap": false, "parentId": "p3tak83vq43bjh0pk9wy", "order": 2, "status": "alive", "_c": "additions"}, {"id": "5vzsrx4mdjb53alhruak", "name": "يحي", "gender": "m", "gap": false, "parentId": "veuit1ziycgq9fqua00o", "order": 3, "status": "alive", "_c": "additions"}, {"id": "5ys87g85epibfgzgnd9z", "name": "فريدة", "gender": "f", "gap": false, "parentId": "s005", "order": 1, "status": "dead", "_c": "additions"}, {"id": "610sc2piv9sqmy07sbbb", "name": "ريوف", "gender": "f", "gap": false, "parentId": "nqpuwis99wgvyvsmtd06", "order": 1, "status": "alive", "_c": "additions"}, {"id": "71jphrrwic4wjqupqa0a", "name": "غدي", "gender": "f", "gap": false, "parentId": "s006", "order": 3, "status": "alive", "_c": "additions"}, {"id": "7dueovhdesuptra2kzyf", "name": "وسام", "gender": "m", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 3, "status": "alive", "_c": "additions"}, {"id": "7g29y2xni3sdrl97h2zf", "name": "صباح", "gender": "f", "gap": false, "parentId": "s005", "order": 7, "status": "dead", "_c": "additions"}, {"id": "7z6bljp05ylq2d0okw2z", "name": "شهد", "gender": "f", "gap": false, "parentId": "p13nysosecg6cs3bte01", "order": 6, "status": "alive", "_c": "additions"}, {"id": "90hwtvi1vv04p7yq91bd", "name": "تاليا", "gender": "f", "gap": false, "parentId": "ahqwsomxc8qjxikvcqhl", "order": 3, "status": "alive", "_c": "additions"}, {"id": "93fjxxdsoiktw1bqj497", "name": "سهل", "gender": "m", "gap": false, "parentId": "s007", "order": 1, "status": "alive", "_c": "additions"}, {"id": "9j6y48th6l5qkfrw5fys", "name": "عبدالله", "gender": "m", "gap": false, "parentId": "d9yi9v4jq8a9lndrlmpi", "order": 2, "status": "alive", "_c": "additions"}, {"id": "9sm09a135deyl552tn91", "name": "أديب", "gender": "m", "gap": false, "parentId": "p3tak83vq43bjh0pk9wy", "order": 0, "status": "alive", "_c": "additions"}, {"id": "a4viacsnd1k6fyuxs980", "name": "أحمد فخري", "gender": "m", "gap": false, "parentId": "s004", "order": 1, "status": "dead", "_c": "additions"}, {"id": "ahqwsomxc8qjxikvcqhl", "name": "ايمن", "gender": "m", "gap": false, "parentId": "s005", "order": 6, "status": "", "_c": "additions"}, {"id": "bulbg47g4044o0y74g1n", "name": "عز", "gender": "m", "gap": false, "parentId": "ahqwsomxc8qjxikvcqhl", "order": 5, "status": "alive", "_c": "additions"}, {"id": "d9yi9v4jq8a9lndrlmpi", "name": "أديب", "gender": "m", "gap": false, "parentId": "s005", "order": 5, "status": "", "_c": "additions"}, {"id": "e32zdo1lgiw9yzhtr5bk", "name": "نعيمة", "gender": "f", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 6, "status": "alive", "_c": "additions"}, {"id": "f2qy7ndf9v59cmd70grf", "name": "جنى", "gender": "f", "gap": false, "parentId": "fn3f9ii53kirpznet38g", "order": 2, "status": "alive", "_c": "additions"}, {"id": "fn3f9ii53kirpznet38g", "name": "باسم", "gender": "m", "gap": false, "parentId": "p13nysosecg6cs3bte01", "order": 1, "status": "alive", "_c": "additions"}, {"id": "fo5chyzg0q34i6c7x1t8", "name": "حنين", "gender": "f", "gap": false, "parentId": "d9yi9v4jq8a9lndrlmpi", "order": 5, "status": "alive", "_c": "additions"}, {"id": "g3i2rh5e39gggbvln0n1", "name": "تيم", "gender": "m", "gap": false, "parentId": "p3tak83vq43bjh0pk9wy", "order": 1, "status": "alive", "_c": "additions"}, {"id": "gn56m44fdfm7rtn1vqpq", "name": "جسار", "gender": "m", "gap": false, "parentId": "l6r2n1r80m8kjqv84vrr", "order": 0, "status": "alive", "_c": "additions"}, {"id": "hd9az1159rsawhtt6ha8", "name": "محمد", "gender": "m", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 0, "status": "alive", "_c": "additions"}, {"id": "hhnbzppnyc7iko32c4s5", "name": "عبدالقادر", "gender": "m", "gap": false, "parentId": "s005", "order": 8, "status": "dead", "_c": "additions"}, {"id": "i4xeq8fs2kkree9yn4nl", "name": "فتون", "gender": "f", "gap": false, "parentId": "ahqwsomxc8qjxikvcqhl", "order": 0, "status": "alive", "_c": "additions"}, {"id": "iwoz4gqmo22n2zm06bkq", "name": "عبير", "gender": "f", "gap": false, "parentId": "d9yi9v4jq8a9lndrlmpi", "order": 4, "status": "alive", "_c": "additions"}, {"id": "l6r2n1r80m8kjqv84vrr", "name": "فايز", "gender": "m", "gap": false, "parentId": "p13nysosecg6cs3bte01", "order": 3, "status": "alive", "_c": "additions"}, {"id": "lt1ucdq965g4qp635wyw", "name": "اياس", "gender": "m", "gap": false, "parentId": "p3tak83vq43bjh0pk9wy", "order": 3, "status": "alive", "_c": "additions"}, {"id": "mkcj8dsh8dtng8u9g0vu", "name": "راما", "gender": "f", "gap": false, "parentId": "ahqwsomxc8qjxikvcqhl", "order": 1, "status": "alive", "_c": "additions"}, {"id": "nna961o1r96hsf6msupb", "name": "مريم", "gender": "f", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 7, "status": "alive", "_c": "additions"}, {"id": "nqpuwis99wgvyvsmtd06", "name": "بندر", "gender": "m", "gap": false, "parentId": "p13nysosecg6cs3bte01", "order": 2, "status": "alive", "_c": "additions"}, {"id": "nwdrkg2pqbed8du6ojxg", "name": "سلمى", "gender": "f", "gap": false, "parentId": "veuit1ziycgq9fqua00o", "order": 2, "status": "alive", "_c": "additions"}, {"id": "oaqgxpb4lr6nxmhu7gi2", "name": "إبراهيم", "gender": "m", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 2, "status": "alive", "_c": "additions"}, {"id": "p13nysosecg6cs3bte01", "name": "فوزي", "gender": "m", "gap": false, "parentId": "s005", "order": 2, "status": "", "_c": "additions"}, {"id": "p3tak83vq43bjh0pk9wy", "name": "رائد", "gender": "m", "gap": false, "parentId": "d9yi9v4jq8a9lndrlmpi", "order": 1, "status": "alive", "_c": "additions"}, {"id": "pbq5vlokehfvjri5mpgv", "name": "اصيل", "gender": "m", "gap": false, "parentId": "p3tak83vq43bjh0pk9wy", "order": 4, "status": "alive", "_c": "additions"}, {"id": "q44k1ab5zjby4worcmpn", "name": "محمد", "gender": "m", "gap": false, "parentId": "d9yi9v4jq8a9lndrlmpi", "order": 3, "status": "alive", "_c": "additions"}, {"id": "qwk3cdwadtu1509ydqb7", "name": "غزل", "gender": "f", "gap": false, "parentId": "s006", "order": 2, "status": "alive", "_c": "additions"}, {"id": "r81g58qwxuv8kqey7hrf", "name": "سمير", "gender": "m", "gap": false, "parentId": "s005", "order": 3, "status": "dead", "_c": "additions"}, {"id": "raxgklgjfm7wv78pisxz", "name": "عبدالقادر", "gender": "m", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 9, "status": "alive", "_c": "additions"}, {"id": "s001", "name": "", "gender": "m", "gap": true, "parentId": "p086", "order": 0, "status": "", "_c": "additions"}, {"id": "s002", "name": "عبدالقادر", "gender": "m", "gap": false, "parentId": "s001", "order": 0, "status": "", "_c": "additions"}, {"id": "s003", "name": "الشيخ محمد النجار", "gender": "m", "gap": false, "parentId": "s002", "order": 0, "status": "dead", "_c": "additions"}, {"id": "s004", "name": "عبدالقادر", "gender": "m", "gap": false, "parentId": "s003", "order": 0, "status": "dead", "_c": "additions"}, {"id": "s005", "name": "إبراهيم", "gender": "m", "gap": false, "parentId": "s004", "order": 0, "status": "dead", "_c": "additions"}, {"id": "s006", "name": "نبيل", "gender": "m", "gap": false, "parentId": "s005", "order": 0, "status": "", "_c": "additions"}, {"id": "s007", "name": "سلطان", "gender": "m", "gap": false, "parentId": "s006", "order": 0, "status": "alive", "_c": "additions"}, {"id": "t14xw0dwf7q37cz59ejr", "name": "سلوى", "gender": "f", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 8, "status": "alive", "_c": "additions"}, {"id": "tmqsg93c8xqq4qbm55ku", "name": "خالد", "gender": "m", "gap": false, "parentId": "nqpuwis99wgvyvsmtd06", "order": 0, "status": "alive", "_c": "additions"}, {"id": "twnpnp1u8lzv2947dg7t", "name": "مريم", "gender": "f", "gap": false, "parentId": "s003", "order": 2, "status": "dead", "_c": "additions"}, {"id": "ugzv57ausg2b2iydvvyc", "name": "هتان", "gender": "m", "gap": false, "parentId": "s006", "order": 4, "status": "alive", "_c": "additions"}, {"id": "us89lrjvrj1i0ihq7516", "name": "وديع", "gender": "m", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 1, "status": "alive", "_c": "additions"}, {"id": "uzd2stnc834524y9py0g", "name": "مهند", "gender": "m", "gap": false, "parentId": "fn3f9ii53kirpznet38g", "order": 0, "status": "alive", "_c": "additions"}, {"id": "veuit1ziycgq9fqua00o", "name": "وائل", "gender": "m", "gap": false, "parentId": "d9yi9v4jq8a9lndrlmpi", "order": 0, "status": "alive", "_c": "additions"}, {"id": "vg4ac38ricp08fj7yb1h", "name": "أهداب", "gender": "f", "gap": false, "parentId": "r81g58qwxuv8kqey7hrf", "order": 4, "status": "alive", "_c": "additions"}, {"id": "vhzzs1rf8gw78u9tmnvz", "name": "قمر", "gender": "f", "gap": false, "parentId": "p3tak83vq43bjh0pk9wy", "order": 5, "status": "alive", "_c": "additions"}, {"id": "vqanqx6pm7ki9r3z0070", "name": "بسمة", "gender": "f", "gap": false, "parentId": "l6r2n1r80m8kjqv84vrr", "order": 3, "status": "alive", "_c": "additions"}, {"id": "wbt74grrxr1497jduu7q", "name": "فيصل", "gender": "m", "gap": false, "parentId": "p13nysosecg6cs3bte01", "order": 4, "status": "alive", "_c": "additions"}, {"id": "x22d5pq94k81ptexenbb", "name": "تالة", "gender": "f", "gap": false, "parentId": "ahqwsomxc8qjxikvcqhl", "order": 2, "status": "alive", "_c": "additions"}, {"id": "yam6deexn1t56n42dlr6", "name": "عبدالرحمن", "gender": "m", "gap": false, "parentId": "s003", "order": 1, "status": "dead", "_c": "additions"}, {"id": "yyx7ujrvxyq40lgfenu1", "name": "يوسف", "gender": "m", "gap": false, "parentId": "veuit1ziycgq9fqua00o", "order": 0, "status": "alive", "_c": "additions"}, {"id": "z608pojns4ehafcf6pq1", "name": "فاتن", "gender": "f", "gap": false, "parentId": "veuit1ziycgq9fqua00o", "order": 1, "status": "alive", "_c": "additions"}, {"id": "zua4xwl58v8xv387ztdi", "name": "مؤيد", "gender": "m", "gap": false, "parentId": "fn3f9ii53kirpznet38g", "order": 1, "status": "alive", "_c": "additions"}].forEach(r => { S.P[r.id] = r; });
 
-/* ── الفروع ── */
-let girls = false, sc = 1;
-const open = new Set();
-const vis = x => girls || !x.f || x.g;
-const kids = x => (x.k || []).filter(vis);
-const count = x => { let n = 0; (x.k || []).forEach(k => { n += 1 + count(k); }); return n; };
-function byPath(p){ let x = D.fam; p.split(".").slice(1).forEach(i => { x = kids(x)[+i]; }); return x; }
-function card(x, p){
-  const kv = kids(x).length, hid = (x.k || []).length - kv;
-  return `<button class="pc ${x.f?"f":""} ${x.g?"g":""}" data-p="${p}">
-    <span class="d d${x.s}"></span><span>${esc(NM(x))}</span>
-    ${kv?`<span class="c">${ar(kv)}</span>`:""}
-    ${hid?`<span class="cv">+${ar(hid)}</span>`:""}
-    ${kv?`<span class="cv">${open.has(p)?"▴":"▾"}</span>`:""}</button>`;
+const nameOf = p => p ? (p.gap ? "حلقة مفقودة" : (p.name || "بلا اسم")) : "";
+const isF  = p => p && p.gender === "f";
+const visP = p => p && (S.girls || !isF(p) || p.gap);
+function kidsOf(id){
+  const k = Object.values(S.P).filter(p => p.parentId === id);
+  k.sort((a,b) => (a.order ?? 0) - (b.order ?? 0) || String(a.id).localeCompare(String(b.id)));
+  return k;
 }
-function level(x, p){
-  const ks = kids(x); if(!ks.length) return "";
-  let h = `<div class="kids">` + ks.map((k, i) => card(k, p + "." + i)).join("") + `</div>`;
-  ks.forEach((k, i) => { const q = p + "." + i;
-    if(open.has(q) && kids(k).length)
-      h += `<div class="sub"><div class="lbl">أبناء ${esc(NM(k))}</div>${level(k, q)}</div>`; });
-  return h;
-}
-function drawFam(){
-  document.documentElement.style.setProperty("--sc", sc);
-  $("#fam").innerHTML = `<div class="kids">${card(D.fam, "0")}</div>`
-    + `<div class="sub"><div class="lbl">أبناء ${esc(NM(D.fam))}</div>${level(D.fam, "0")}</div>`;
-  $("#girls").textContent = girls ? "إخفاء البنات" : "إظهار البنات";
-  $("#girls").classList.toggle("on", girls);
-  drawUnwan();
-}
-function allPaths(x, p, out){ out.push(p); kids(x).forEach((k, i) => allPaths(k, p + "." + i, out)); return out; }
-$("#fam").addEventListener("click", e => {
-  const b = e.target.closest(".pc"); if(!b) return;
-  const p = b.dataset.p, x = byPath(p);
-  if(kids(x).length){ if(open.has(p)) open.delete(p); else open.add(p); }
-  drawFam(); sheetFam(p);
-});
-$("#girls").onclick = () => { girls = !girls; open.clear(); drawFam(); };
-$("#zin").onclick  = () => { sc = Math.min(1.7, sc + 0.12); drawFam(); };
-$("#zout").onclick = () => { sc = Math.max(0.7, sc - 0.12); drawFam(); };
-$("#openAll").onclick  = () => { allPaths(D.fam, "0", []).forEach(p => open.add(p)); drawFam(); };
-$("#closeAll").onclick = () => { open.clear(); drawFam(); };
-$("#prn").onclick = () => { allPaths(D.fam, "0", []).forEach(p => open.add(p)); drawFam(); setTimeout(() => print(), 120); };
-
-/* ── البطاقة ── */
-function nasabChain(i){
-  const out = [NM(C[i])];
-  for(let j = i - 1; j >= 0; j--) out.push(C[j].g ? "⋯" : "بن " + NM(C[j]));
+const kidsVis = id => kidsOf(id).filter(visP);
+function lineOf(id){ const o=[]; let c=S.P[id], g=0; while(c && g++<400){ o.push(c); c = c.parentId ? S.P[c.parentId] : null; } return o; }
+function descN(id){ let n=0; kidsOf(id).forEach(k => { n += 1 + descN(k.id); }); return n; }
+function nasabShort(id, n){
+  const p = S.P[id]; if(!p) return "";
+  const out = [nameOf(p)]; let c = p, first = true, g = 0, used = 0;
+  while(c.parentId && g++ < 400){
+    const pr = S.P[c.parentId]; if(!pr) break;
+    if(used >= n){ const rest = lineOf(c.id).length - 1;
+      out.push("… وإلى آدم عليه السلام (" + ar(rest) + " جَدّاً)"); break; }
+    if(pr.gap) out.push("⋯"); else { out.push(first && isF(c) ? "بنت" : "بن", nameOf(pr)); used++; }
+    first = false; c = pr;
+  }
   return out.join(" ");
 }
-function nasabFam(p){
-  const parts = p.split(".");
-  let x = D.fam, line = [D.fam];
-  for(let i = 1; i < parts.length; i++){ x = kids(x)[+parts[i]]; line.push(x); }
-  const out = [NM(line[line.length-1])];
-  for(let i = line.length - 2; i >= 0; i--)
-    out.push((i === line.length - 2 && line[line.length-1].f ? "بنت " : "بن ") + NM(line[i]));
-  return out.join(" ") + " " + nasabChain(C.length - 1).replace(NM(C[C.length-1]), "").trim();
+function nasab(id){
+  const p = S.P[id]; if(!p) return "";
+  const out = [nameOf(p)]; let c = p, first = true, g = 0;
+  while(c.parentId && g++ < 400){
+    const pr = S.P[c.parentId]; if(!pr) break;
+    if(pr.gap) out.push("⋯"); else out.push(first && isF(c) ? "بنت" : "بن", nameOf(pr));
+    first = false; c = pr;
+  }
+  return out.join(" ");
 }
-function sheet(title, nasab, tags){
-  $("#sb").innerHTML = `<h3>${esc(title)}</h3><div class="nasab">${esc(nasab)}</div>
-    <div class="row">${tags.map(t => `<span class="tg ${t[1]||""}">${esc(t[0])}</span>`).join("")}</div>`;
-  $("#sheet").classList.add("show");
+function rootId(){ const r = Object.values(S.P).find(p => !p.parentId); return r ? r.id : null; }
+function trunk(){
+  const o = []; let c = rootId(), g = 0;
+  while(c && g++ < 400){ o.push(S.P[c]); const k = kidsOf(c); if(k.length !== 1) break; c = k[0].id; }
+  return o;
 }
-$("#chain").addEventListener("click", e => {
-  const v = e.target.closest("[data-c]"); if(!v) return;
-  const i = +v.dataset.c, x = C[i];
-  const t = [["الجيل " + ar(i+1), ""]];
-  if(x.g) t.push(["حلقة قيد البحث", ""]); else if(MILE[x.n]) t.push([MILE[x.n], "al"]);
-  sheet(NM(x), nasabChain(i), t);
-});
-function sheetFam(p){
-  const x = byPath(p);
-  const kv = (x.k || []);
-  const t = [["الجيل " + ar(C.length + p.split(".").length - 1), ""]];
-  if(x.s === 1) t.push(["على قيد الحياة", "al"]);
-  if(x.s === 2) t.push([x.f ? "رحمها الله" : "رحمه الله", ""]);
-  const sons = kv.filter(k => !k.f && !k.g).length, dau = kv.filter(k => k.f).length;
-  if(sons) t.push([ar(sons) + (sons === 1 ? " ابن" : " أبناء"), ""]);
-  if(dau)  t.push([ar(dau) + (dau === 1 ? " بنت" : " بنات"), ""]);
-  const d = count(x); if(d) t.push([ar(d) + " في ذرّيته", ""]);
-  sheet(NM(x), nasabFam(p), t);
-}
-$("#sx").onclick = () => $("#sheet").classList.remove("show");
+const headId = () => { const t = trunk(); return t.length ? t[t.length-1].id : rootId(); };
+/* نسخة الاطّلاع: لا أحد يملك الإضافة ولا التعديل */
+const myRole = () => "view";
+const canWrite = () => false;
+const canTouch = () => false;
+const canAddUnder = () => false;
+function startAdd(){} function startEdit(){} function delPerson(){}
+function toast(m){ const t=$("#toast"); t.firstElementChild.textContent=m; t.hidden=false;
+  clearTimeout(toast._t); toast._t=setTimeout(()=>{t.hidden=true;},2400); }
 
-/* ── البحث ── */
-$("#q").addEventListener("input", e => {
-  const q = e.target.value.trim(); const r = $("#res");
-  if(q.length < 2){ r.textContent = ""; return; }
-  const hits = [];
-  C.forEach((x, i) => { if(!x.g && x.n.includes(q)) hits.push(["جذع", NM(x), "c" + i]); });
-  (function walk(x, p){ if(!x.g && (x.n || "").includes(q) && p !== "0") hits.push(["فرع", NM(x), p]);
-    kids(x).forEach((k, i) => walk(k, p + "." + i)); })(D.fam, "0");
-  r.innerHTML = hits.length
-    ? iso(hits.length) + " نتيجة: " + hits.slice(0, 24).map(h =>
-        `<button class="b" style="padding:3px 9px;margin:3px 3px 0 0" data-h="${esc(h[2])}">${esc(h[1])} <span class="muted">· ${h[0]}</span></button>`).join("")
-    : "لا نتيجة.";
-});
-$("#res").addEventListener("click", e => {
-  const b = e.target.closest("[data-h]"); if(!b) return;
-  const h = b.dataset.h;
-  if(h[0] === "c"){ const i = +h.slice(1);
-    const el = document.querySelector(`[data-c="${i}"]`);
-    if(el){ el.scrollIntoView({block:"center"}); el.click(); } return; }
-  const parts = h.split("."); let acc = "0";
-  for(let i = 1; i < parts.length; i++){ open.add(acc); acc += "." + parts[i]; }
-  drawFam();
-  setTimeout(() => { const el = document.querySelector(`[data-p="${h}"]`);
-    if(el){ el.scrollIntoView({block:"center"}); } sheetFam(h); }, 60);
-});
+let VIEW = "home";
+function go(v){
+  VIEW = v;
+  $$("#tabs .tab").forEach(b => b.setAttribute("aria-selected", String(b.dataset.v === v)));
+  ["home","tree","refs"].forEach(k => { $("#v-"+k).hidden = (k !== v); });
+  scrollTo(0,0); redraw();
+}
+$("#tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if(b) go(b.dataset.v); });
+let rafT = null;
+function redraw(){ if(rafT) return; rafT = requestAnimationFrame(() => { rafT = null; draw(); }); }
+function draw(){
+  if(VIEW === "home") drawHome();
+  if(VIEW === "tree") drawTree();
+  if($("#sheet").classList.contains("show") && S.focus) openSheet(S.focus, true);
+}
 
-/* ── العنوان المذهّب ── */
+/* ═══════════ عُنوانٌ مُذهَّب فوق الشجرة ═══════════
+   على هيئة «عُنوان» المخطوطات: إطارٌ ذهبيّ مزخرف، ونخلةٌ في وسطه
+   تذكيراً بالشجرة الأصلية المرسومة باليد على هيئة نخلة، وحولها
+   أربعة أقراصٍ تحمل أرقام البيت وهي تتغيّر مع كل اسم يُضاف.      */
 function frond(dx, dy){
-  const x0=0,y0=-50,x1=dx*0.48,y1=-56+dy*0.30,x2=dx,y2=dy;
+  const x0 = 0, y0 = -50, x1 = dx * 0.48, y1 = -56 + dy * 0.30, x2 = dx, y2 = dy;
   let d = `<path d="M${x0} ${y0} Q ${x1.toFixed(1)} ${y1.toFixed(1)} ${x2} ${y2}" fill="none" stroke="url(#lfg)" stroke-width="3.6" stroke-linecap="round"/>`;
-  for(let t=0.30;t<0.98;t+=0.135){ const u=1-t;
-    const px=u*u*x0+2*u*t*x1+t*t*x2, py=u*u*y0+2*u*t*y1+t*t*y2, s=dx>=0?1:-1;
+  for(let t = 0.30; t < 0.98; t += 0.135){
+    const u = 1 - t;
+    const px = u*u*x0 + 2*u*t*x1 + t*t*x2;
+    const py = u*u*y0 + 2*u*t*y1 + t*t*y2;
+    const s = dx >= 0 ? 1 : -1;
     d += `<path d="M${px.toFixed(1)} ${py.toFixed(1)} l ${(5.6*s).toFixed(1)} -4.6" stroke="#5E8A4E" stroke-width="1.7" stroke-linecap="round" opacity=".92"/>`;
-    d += `<path d="M${px.toFixed(1)} ${py.toFixed(1)} l ${(4.4*s).toFixed(1)} 4.2" stroke="#44722F" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>`; }
+    d += `<path d="M${px.toFixed(1)} ${py.toFixed(1)} l ${(4.4*s).toFixed(1)} 4.2" stroke="#44722F" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>`;
+  }
   return d;
 }
 function palmArt(cx, cy, k){
   let g = `<g transform="translate(${cx} ${cy}) scale(${k})">`;
   g += `<ellipse cx="0" cy="2" rx="46" ry="6" fill="#3C2612" opacity=".12"/>`;
   g += `<path d="M-8 0 C -6.4 -19 -5 -36 -4 -50 L 4 -50 C 5 -36 6.4 -19 8 0 Z" fill="url(#brk)"/>`;
-  for(let i=0;i<9;i++){ const y=-4-i*5.2, w=7.6-i*0.38;
+  for(let i = 0; i < 9; i++){ const y = -4 - i * 5.2, w = 7.6 - i * 0.38;
     g += `<path d="M${-w} ${y} q ${w} 2.2 ${2*w} 0" fill="none" stroke="#2E2012" stroke-width="1" opacity=".3"/>`; }
   [[-62,-18],[-50,-34],[-30,-46],[-11,-54],[11,-54],[30,-46],[50,-34],[62,-18]].forEach(f => { g += frond(f[0], f[1]); });
-  [[-9,-44],[9,-44],[0,-38]].forEach(p => { g += `<circle cx="${p[0]}" cy="${p[1]}" r="3.1" fill="#B4893A" stroke="#8A6519" stroke-width=".7"/>`; });
+  [[-9,-44],[9,-44],[0,-38]].forEach(p =>
+    { g += `<circle cx="${p[0]}" cy="${p[1]}" r="3.1" fill="#B4893A" stroke="#8A6519" stroke-width=".7"/>`; });
   return g + `</g>`;
 }
 function medal(cx, cy, val, lab, r){
-  return `<g><circle cx="${cx}" cy="${cy}" r="${r}" fill="#FFFCF3" stroke="url(#gld)" stroke-width="2.6"/>
-   <circle cx="${cx}" cy="${cy}" r="${(r*0.84).toFixed(1)}" fill="none" stroke="#B4893A" stroke-width="1" opacity=".55"/>
-   <circle cx="${cx}" cy="${cy}" r="${(r*1.1).toFixed(1)}" fill="none" stroke="#B4893A" stroke-width=".9" opacity=".35" stroke-dasharray="2 5"/>
-   <text class="fr" x="${cx}" y="${(cy+r*0.06).toFixed(1)}" text-anchor="middle" font-size="${(r*0.63).toFixed(1)}" font-weight="700" fill="#241C12">${ar(val)}</text>
-   <text x="${cx}" y="${(cy+r*0.54).toFixed(1)}" text-anchor="middle" font-size="${(r*0.29).toFixed(1)}" fill="#8A7A60" font-family="IBM Plex Sans Arabic, sans-serif">${lab}</text></g>`;
+  r = r || 43;
+  return `<g>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="#FFFCF3" stroke="url(#gld)" stroke-width="2.6"/>
+    <circle cx="${cx}" cy="${cy}" r="${(r*0.84).toFixed(1)}" fill="none" stroke="#B4893A" stroke-width="1" opacity=".55"/>
+    <circle cx="${cx}" cy="${cy}" r="${(r*1.1).toFixed(1)}" fill="none" stroke="#B4893A" stroke-width=".9" opacity=".35" stroke-dasharray="2 5"/>
+    <text class="fr" x="${cx}" y="${(cy+r*0.06).toFixed(1)}" text-anchor="middle" font-size="${(r*0.63).toFixed(1)}" font-weight="700" fill="#241C12">${ar(val)}</text>
+    <text x="${cx}" y="${(cy+r*0.54).toFixed(1)}" text-anchor="middle" font-size="${(r*0.29).toFixed(1)}" fill="#8A7A60" font-family="IBM Plex Sans Arabic, sans-serif">${lab}</text>
+  </g>`;
 }
 function knot(x, y, r){
   return `<g transform="translate(${x} ${y})" fill="none" stroke="url(#gld)" stroke-width="1.6">
-   <circle r="${r}"/><circle r="${r*0.55}"/><path d="M${-r} 0 L ${r} 0 M0 ${-r} L0 ${r}" opacity=".7"/>
-   <path d="M${-r*0.7} ${-r*0.7} L ${r*0.7} ${r*0.7} M${-r*0.7} ${r*0.7} L ${r*0.7} ${-r*0.7}" opacity=".45"/></g>`;
-}
-function stats(){
-  let men = 0, women = 0, tot = 0;
-  C.forEach(x => { if(!x.g){ tot++; men++; } });
-  (function w(x){ if(!x.g){ if(x !== D.fam){ tot++; x.f ? women++ : men++; } } (x.k||[]).forEach(w); })(D.fam);
-  let dep = 0; (function d(x, n){ dep = Math.max(dep, n); (x.k||[]).forEach(k => d(k, n+1)); })(D.fam, C.length);
-  return { tot, men, women, gen: dep };
+    <circle r="${r}"/><circle r="${r*0.55}"/>
+    <path d="M${-r} 0 L ${r} 0 M0 ${-r} L0 ${r}" opacity=".7"/>
+    <path d="M${-r*0.7} ${-r*0.7} L ${r*0.7} ${r*0.7} M${-r*0.7} ${r*0.7} L ${r*0.7} ${-r*0.7}" opacity=".45"/></g>`;
 }
 function drawUnwan(){
-  const S = stats(), nar = innerWidth < 620;
+  const all = Object.values(S.P).filter(p => !p.gap);
+  const men = all.filter(p => !isF(p)).length, women = all.filter(isF).length;
+  let gen = 0; Object.keys(S.P).forEach(id => { gen = Math.max(gen, lineOf(id).length); });
+  const nar = innerWidth < 620;
   const W = nar ? 640 : 1000, H = nar ? 430 : 272;
   const L = nar
     ? { t:92, tf:54, s:126, sf:19, rule:[150,490,152], palm:[320,312,2.0], ground:[120,316,320,300,520,316],
         med:[[108,372],[250,372],[390,372],[532,372]], mr:56 }
     : { t:84, tf:46, s:110, sf:14.5, rule:[318,682,128], palm:[500,248,1.5], ground:[330,248,500,234,670,248],
         med:[[116,190],[256,190],[744,190],[884,190]], mr:43 };
-  $("#unwan").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="قائمة نسب آل النجّار">
+  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="شجرة آل النجّار">
   <defs>
-    <linearGradient id="gld" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D9B463"/>
-      <stop offset=".45" stop-color="#B4893A"/><stop offset="1" stop-color="#8A6519"/></linearGradient>
-    <linearGradient id="brk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3C2612"/>
-      <stop offset=".35" stop-color="#8A5E34"/><stop offset="1" stop-color="#4A331E"/></linearGradient>
-    <linearGradient id="lfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6E9B59"/>
-      <stop offset="1" stop-color="#3F6236"/></linearGradient>
+    <linearGradient id="gld" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D9B463"/><stop offset=".45" stop-color="#B4893A"/>
+      <stop offset="1" stop-color="#8A6519"/></linearGradient>
+    <linearGradient id="brk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3C2612"/><stop offset=".35" stop-color="#8A5E34"/>
+      <stop offset="1" stop-color="#4A331E"/></linearGradient>
+    <linearGradient id="lfg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6E9B59"/><stop offset="1" stop-color="#3F6236"/></linearGradient>
     <pattern id="lat" width="46" height="46" patternUnits="userSpaceOnUse">
       <g fill="none" stroke="#B4893A" stroke-width=".9" opacity=".13">
         <rect x="9" y="9" width="28" height="28"/>
         <rect x="9" y="9" width="28" height="28" transform="rotate(45 23 23)"/>
         <circle cx="23" cy="23" r="3.4"/></g></pattern>
-    <radialGradient id="sha" cx=".5" cy=".42" r=".7"><stop offset="0" stop-color="#FFFDF6"/>
-      <stop offset="1" stop-color="#F2E7CC"/></radialGradient>
+    <radialGradient id="sha" cx=".5" cy=".42" r=".7">
+      <stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#F2E7CC"/></radialGradient>
   </defs>
   <rect x="5" y="5" width="${W-10}" height="${H-10}" rx="20" fill="url(#sha)"/>
   <rect x="5" y="5" width="${W-10}" height="${H-10}" rx="20" fill="url(#lat)"/>
   <rect x="5" y="5" width="${W-10}" height="${H-10}" rx="20" fill="none" stroke="url(#gld)" stroke-width="3.4"/>
   <rect x="14" y="14" width="${W-28}" height="${H-28}" rx="14" fill="none" stroke="#B4893A" stroke-width="1" opacity=".6"/>
   ${knot(26,26,9)}${knot(W-26,26,9)}${knot(26,H-26,9)}${knot(W-26,H-26,9)}
-  <text class="fr" x="${W/2}" y="${L.t}" text-anchor="middle" font-size="${L.tf}" font-weight="700" fill="#241C12">قائمةُ نسبِ آلِ النجّار</text>
+  <text class="fr" x="${W/2}" y="${L.t}" text-anchor="middle" font-size="${L.tf}" font-weight="700" fill="#241C12">شَجَرَةُ آلِ النَّجَّار</text>
   <text x="${W/2}" y="${L.s}" text-anchor="middle" font-size="${L.sf}" fill="#8A7A60" font-family="IBM Plex Sans Arabic, sans-serif">الأنصاريّون الخزرجيّون · من آدمَ عليه السلام إلى اليوم</text>
   <path d="M${L.rule[0]} ${L.rule[2]} H${L.rule[1]}" stroke="url(#gld)" stroke-width="1" opacity=".45"/>
   <circle cx="${W/2}" cy="${L.rule[2]}" r="4" fill="#B4893A"/>
   <path d="M${L.ground[0]} ${L.ground[1]} Q ${L.ground[2]} ${L.ground[3]} ${L.ground[4]} ${L.ground[5]}" fill="none" stroke="#5E8A4E" stroke-width="1.4" opacity=".4"/>
   ${palmArt(L.palm[0], L.palm[1], L.palm[2])}
-  ${medal(L.med[0][0], L.med[0][1], S.tot, "اسماً", L.mr)}
-  ${medal(L.med[1][0], L.med[1][1], S.gen, "جيلاً", L.mr)}
-  ${medal(L.med[2][0], L.med[2][1], S.men, "رجلاً", L.mr)}
-  ${medal(L.med[3][0], L.med[3][1], S.women, "امرأة", L.mr)}</svg>`;
+  ${medal(L.med[0][0], L.med[0][1], all.length, "اسماً", L.mr)}
+  ${medal(L.med[1][0], L.med[1][1], gen, "جيلاً", L.mr)}
+  ${medal(L.med[2][0], L.med[2][1], men, "رجلاً", L.mr)}
+  ${medal(L.med[3][0], L.med[3][1], women, "امرأة", L.mr)}
+</svg>`;
+  $("#unwan").innerHTML = svg;
 }
-let w0 = innerWidth;
-addEventListener("resize", () => { if((w0 < 620) !== (innerWidth < 620)) drawUnwan(); w0 = innerWidth; });
-drawFam();
+let unwanW = innerWidth;
+addEventListener("resize", () => {
+  if((unwanW < 620) !== (innerWidth < 620)){ unwanW = innerWidth; if(VIEW === "tree") drawUnwan(); }
+  unwanW = innerWidth;
+});
+
+/* ═══════════ الصفحة الرئيسية ═══════════ */
+const HOME_DEFAULT = `
+<p>هذه العائلة من <b>بني النجّار</b>، بطنٍ من الخزرج من الأنصار، أهلِ المدينة الذين آووا النبيّ ﷺ ونصروه. ونسبها محفوظٌ في شجرةٍ قديمة مرسومة باليد على هيئة نخلة: جذعها سلسلةٌ من آدم عليه السلام صعوداً إلى <b>عطا الله</b>، ثم تتفرّع منه الأغصان في الأجيال المتأخرة. وقد نُقلت تلك الشجرة إلى هذا النظام اسماً اسماً، وقوبلت على مصادر النسب المعروفة، وأُثبت ما بقي مجهولاً على حاله <b>حلقةً مفقودة</b> لا تُملأ بالظنّ.</p>
+
+<h3>خيرُ دور الأنصار</h3>
+<p>قال النبيّ ﷺ:</p>
+<div class="nasab">«خَيْرُ دُورِ الأنصارِ بَنُو النَّجَّارِ، ثُمَّ بَنُو عَبْدِ الأشْهَلِ، ثُمَّ بَنُو الحارِثِ بنِ الخَزْرَجِ، ثُمَّ بَنُو ساعِدَةَ، وفي كُلِّ دُورِ الأنصارِ خَيْرٌ»</div>
+<p class="sm muted">رواه أبو أُسَيْد الساعدي رضي الله عنه. أخرجه البخاري في مناقب الأنصار، باب فضل دور الأنصار (٣٥٧٨–٣٥٨٠)، ومسلم في فضائل الصحابة. ولمّا سمعه سعد بن عبادة قال: «يا رسول الله، خير دور الأنصار فجُعلنا آخراً»، فقال ﷺ: «أوَليس بحسبكم أن تكونوا من الخيار».</p>
+
+<h3>وقال الله فيهم</h3>
+<div class="nasab">﴿وَالَّذِينَ تَبَوَّؤُوا الدَّارَ وَالإِيمَانَ مِن قَبْلِهِمْ يُحِبُّونَ مَنْ هَاجَرَ إِلَيْهِمْ وَلَا يَجِدُونَ فِي صُدُورِهِمْ حَاجَةً مِّمَّا أُوتُوا وَيُؤْثِرُونَ عَلَىٰ أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ﴾</div>
+<p class="sm muted">سورة الحشر · ٩ — وهذه الآية مكتوبة في صدر شجرة العائلة الأصلية.</p>
+
+<h3>قصّةٌ مختصرة</h3>
+<p>تزوّج هاشم بن عبد مناف <b>سلمى بنت عمرو</b> النجاريّة من بني عديّ بن النجّار بيثرب، فولدت له <b>عبد المطّلب</b> جدَّ النبيّ ﷺ. فصار بنو النجّار أخوالَ عبد المطّلب ثم أخوالَ عبد الله أبي النبيّ ﷺ، ولذلك كان ﷺ يسمّيهم أخواله، وتوفّي أبوه عبد الله بالمدينة عندهم. فلمّا هاجر ﷺ بركت ناقته في بني النجّار، ونزل في بيت <b>أبي أيّوب الأنصاريّ</b> رضي الله عنه — وهو جدٌّ في هذه الشجرة — فأقام عنده سبعة أشهر حتى بُني المسجد والمساكن.</p>
+<div class="note warn"><b>تفريقٌ لا يصحّ إغفاله:</b> بنو النجّار <b>أخوالُ</b> النبيّ ﷺ من جهة جدّه عبد المطّلب، وليسوا من ذرّيّته. فليس في هذه الشجرة انتسابٌ إليه ﷺ نسبَ ولادة، وإنما هي خؤولةٌ ومصاهرةٌ ونصرةٌ وجوار، وهي في نفسها شرفٌ عظيمٌ يُستغنى به عن الزيادة.</div>
+
+<h3>ما الغرض من هذا النظام</h3>
+<p>أن يبقى النسب محفوظاً مكتوباً لا في الذاكرة وحدها، وأن يستطيع كلُّ فرعٍ من العائلة أن يُدخل أبناءه وأحفاده بنفسه، وأن يُفرَّق في كل اسم بين ما ثبت بمصدر وما بقي موقوفاً على تصديق كبار العائلة.</p>`;
+
+function drawHome(){
+  const m = S.meta.home || {};
+  $("#homeTitle").textContent = m.title || "آلُ النجّار";
+  $("#homeSub").textContent   = m.sub   || "الأنصاريّون الخزرجيّون — بيتٌ من بني النجّار، أخوالِ النبيّ ﷺ وأهلِ داره يوم الهجرة";
+  $("#homeBody").innerHTML    = m.body  || HOME_DEFAULT;
+
+  const all = Object.values(S.P).filter(p => !p.gap);
+  const men = all.filter(p => !isF(p)).length, women = all.filter(isF).length;
+  const alive = all.filter(p => p.status === "alive").length;
+  const gen = (() => { let mx = 0; Object.keys(S.P).forEach(id => { mx = Math.max(mx, lineOf(id).length); }); return mx; })();
+  const st = [["الأسماء المسجّلة", all.length],["الرجال", men],["النساء", women],["الأحياء", alive],["الأجيال من آدم عليه السلام", gen]];
+  $("#homeStats").innerHTML = st.map(([k,v]) =>
+    `<div class="item" style="flex:1 1 140px;display:block"><div class="sm muted">${k}</div><div style="font-family:var(--d);font-size:26px;font-weight:700">${iso(v)}</div></div>`).join("");
+
+  const k = S.meta.keeper || {};
+  $("#homeKeeper").innerHTML =
+    `<p>${esc(k.text || "القائم على هذه الصفحة اليوم: سلطان بن نبيل بن إبراهيم بن عبدالقادر بن محمد بن عبدالقادر النجّار. وهو الذي يملك وحده تعديل سلسلة النسب المحقّقة، ويمنح بقيّة أفراد العائلة صلاحية إدخال فروعهم.")}</p>
+     <div class="note">إدارة هذه الصفحة <b>تُورَّث</b>: لمدير النظام أن يرفع أحد أفراد العائلة إلى «مسؤول» فيشاركه كل صلاحياته عدا تعديل الأصل المحقّق، وله أن يسلّم الصفحة كاملة لمن بعده. والمرجّح في الاختيار أعلمُهم بالنسب وأحرصُهم على ضبطه.</div>`;
+  $("#editHome").hidden = !S.me.owner;
+}
+
+/* ═══════════ جذع النسب ═══════════ */
+function drawChain(){
+  const t = trunk(), box = $("#chainList");
+  box.innerHTML = `<div class="sm muted" style="margin-top:8px">${iso(t.length)} اسماً متسلسلاً — ثم يتفرّع البيت</div>
+    <div class="chainlist">` + t.map((p,i) =>
+      `<span class="${p.gap?"gapl":""}" data-go="${esc(p.id)}"><b>${ar(i+1)}</b>${esc(nameOf(p))}</span>`).join("") + `</div>`;
+}
+
+/* ═══════════ الشجرة ═══════════ */
+function card(p, sel){
+  const kv = kidsVis(p.id).length, kall = kidsOf(p.id).length;
+  const hid = kall - kv;
+  const st = p.status === "alive" ? "alive" : (p.status === "dead" ? "dead" : "unk");
+  const ph = p.photo ? `<img class="av" src="/_blob/${esc(p.photo)}" alt="">` : "";
+  return `<button class="pcard ${isF(p)?"f":""} ${p.gap?"gap":""}" data-id="${esc(p.id)}" data-sel="${sel?1:0}">
+     ${ph}<span class="dot ${st}"></span><span class="nm">${esc(nameOf(p))}</span>
+     ${kv?`<span class="cnt">${ar(kv)}</span>`:""}
+     ${hid?`<span class="car">+${ar(hid)}</span>`:""}
+     <span class="car">${kv ? (S.open[p.id] ? "▴" : "▾") : ""}</span>
+   </button>`;
+}
+function subtree(id, depth){
+  const ks = kidsVis(id);
+  if(!ks.length) return "";
+  let h = `<div class="kids">` + ks.map(k => card(k, S.focus === k.id)).join("") + `</div>`;
+  ks.forEach(k => {
+    if(S.open[k.id] && kidsVis(k.id).length){
+      h += `<div class="kidwrap"><div class="sm muted" style="margin-bottom:3px">أبناء ${esc(nameOf(k))}</div>`
+         + subtree(k.id, depth+1) + `</div>`;
+    }
+  });
+  return h;
+}
+function drawTree(){
+  document.documentElement.style.setProperty("--sc", S.sc);
+  $("#tGirls").textContent = S.girls ? "إخفاء البنات" : "إظهار البنات";
+  $("#tGirls").classList.toggle("on", S.girls);
+  drawUnwan();
+  if(!Object.keys(S.P).length){ $("#treeBody").innerHTML = '<p class="muted">يجري تحميل الأسماء…</p>'; return; }
+  const root = S.root || headId();
+  drawChain();
+  const path = lineOf(root).reverse();
+  const shown = path.length > 6 ? [path[0], null].concat(path.slice(-5)) : path;
+  $("#crumbs").innerHTML = shown.map((p,i) =>
+      (i ? `<i>›</i>` : "") + (p === null ? `<i>⋯ ${ar(path.length-6)} جَدّاً ⋯</i>`
+        : `<button data-root="${esc(p.id)}">${esc(nameOf(p))}</button>`)).join("")
+    + (root !== headId() ? ` <button class="b sm" data-root="${esc(headId())}" style="margin-inline-start:auto">عودة إلى رأس البيت</button>` : "");
+  const rp = S.P[root];
+  const inner = subtree(root, 0);
+  $("#treeBody").innerHTML =
+    `<div class="kids">${card(rp, S.focus===root)}</div>` +
+    (inner ? `<div class="kidwrap"><div class="sm muted" style="margin-bottom:3px">أبناء ${esc(nameOf(rp))}</div>${inner}</div>`
+           : `<p class="muted sm" style="margin-top:10px">لا ذرّية مسجّلة تحت هذا الاسم بعد.</p>`);
+}
+function openAll(v){
+  S.open = {};
+  if(v) Object.keys(S.P).forEach(id => { if(kidsVis(id).length) S.open[id] = true; });
+  redraw();
+}
+function revealTo(id){ let c = S.P[id]; while(c && c.parentId){ S.open[c.parentId] = true; c = S.P[c.parentId]; } }
+
+$("#treeBody").addEventListener("click", e => {
+  const b = e.target.closest(".pcard"); if(!b) return;
+  const id = b.dataset.id;
+  if(kidsVis(id).length) S.open[id] = !S.open[id];
+  S.focus = id; openSheet(id); redraw();
+});
+$("#crumbs").addEventListener("click", e => {
+  const b = e.target.closest("[data-root]"); if(!b) return;
+  S.root = b.dataset.root; redraw();
+});
+$("#chainList").addEventListener("click", e => {
+  const s = e.target.closest("[data-go]"); if(!s) return;
+  S.focus = s.dataset.go; openSheet(s.dataset.go);
+});
+$("#chainTog").onclick = () => {
+  const b = $("#chainList"); b.hidden = !b.hidden;
+  $("#chainTog").textContent = b.hidden ? "عرض السلسلة" : "طيّ السلسلة";
+};
+$("#tGirls").onclick = () => { S.girls = !S.girls; try{localStorage.setItem("njrv.g", S.girls?"1":"0");}catch(e){} redraw(); };
+$("#tZoomIn").onclick  = () => { S.sc = Math.min(1.8, S.sc + 0.12); try{localStorage.setItem("njrv.sc", S.sc);}catch(e){} redraw(); };
+$("#tZoomOut").onclick = () => { S.sc = Math.max(0.68, S.sc - 0.12); try{localStorage.setItem("njrv.sc", S.sc);}catch(e){} redraw(); };
+$("#tAll").onclick  = () => openAll(true);
+$("#tNone").onclick = () => openAll(false);
+$("#tSearch").addEventListener("input", e => {
+  const q = e.target.value.trim();
+  if(q.length < 2) return;
+  const hit = Object.values(S.P).find(p => !p.gap && nameOf(p).includes(q));
+  if(hit){ S.root = headId(); revealTo(hit.id); S.focus = hit.id; redraw();
+    setTimeout(() => { const el = $(`.pcard[data-id="${CSS.escape(hit.id)}"]`); if(el) el.scrollIntoView({block:"center"}); }, 40); }
+});
+
+/* ═══════════ بطاقة الشخص ═══════════ */
+function openSheet(id, quiet){
+  const p = S.P[id]; if(!p) return;
+  S.focus = id;
+  const kids = kidsOf(id), sons = kids.filter(k => !isF(k) && !k.gap).length, dau = kids.filter(isF).length;
+  const sib = p.parentId ? kidsOf(p.parentId) : [];
+  const ix = sib.findIndex(x => x.id === id);
+  const f = [];
+  const stTxt = p.status === "alive" ? "على قيد الحياة" : (p.status === "dead" ? (isF(p) ? "رحمها الله" : "رحمه الله") : "غير معروفة");
+  f.push(["الحالة", stTxt]);
+  if(p.born)   f.push(["الميلاد", p.born + (p.bornCal === "g" ? " م" : (p.bornCal === "h" ? " هـ" : ""))]);
+  if(p.died)   f.push(["الوفاة", p.died]);
+  if(p.spouse) f.push([isF(p) ? "الزوج" : "الزوجة", p.spouse]);
+  if(p.city)   f.push(["السكن", p.city]);
+  if(p.parentId && S.P[p.parentId]) f.push([isF(p)?"بنت":"ابن", nameOf(S.P[p.parentId])]);
+  if(sib.length > 1) f.push(["الترتيب", `${ar(ix+1)} من ${ar(sib.length)}` + (ix>0 ? ` · بعد ${nameOf(sib[ix-1])}` : " · الأكبر") + (ix<sib.length-1 ? ` · قبل ${nameOf(sib[ix+1])}` : " · الأصغر")]);
+  if(sons) f.push(["الأبناء", ar(sons)]);
+  if(dau)  f.push(["البنات", ar(dau)]);
+  const d = descN(id); if(d) f.push(["في ذرّيته", ar(d)]);
+  f.push(["الجيل من آدم عليه السلام", ar(lineOf(id).length)]);
+  f.push(["المصدر", p._c === BASE ? "الأصل المحقّق بالمصادر" : "من شجرة العائلة"]);
+  if(p.note) f.push(["ملاحظات", p.note]);
+
+  const acts = [];
+  if(p.parentId) acts.push(`<button class="b" data-act="up">↑ فرع ${esc(nameOf(S.P[p.parentId]))}</button>`);
+  if(kidsVis(p.id).length) acts.push(`<button class="b" data-act="here">⌂ ابدأ الشجرة من هنا</button>`);
+
+  $("#sheetBody").innerHTML =
+    (p.photo ? `<img class="photo" src="/_blob/${esc(p.photo)}" alt="">` : "") +
+    `<h2>${esc(nameOf(p))}</h2>
+     <div class="nasab" id="nsb">${esc(S.fullNasab ? nasab(id) : nasabShort(id, 9))}</div>
+     <button class="b sm" data-act="nsb" style="margin-bottom:8px">${S.fullNasab ? "اختصار النسب" : "عرض النسب كاملاً"}</button>
+     <dl class="facts">${f.map(([k,v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+     <div class="row">${acts.join("")}</div>
+     `;
+  $("#sheet").classList.add("show");
+}
+$("#sheetX").onclick = () => $("#sheet").classList.remove("show");
+$("#sheetBody").addEventListener("click", e => {
+  const b = e.target.closest("[data-act]"); if(!b) return;
+  const a = b.dataset.act, p = S.P[S.focus]; if(!p) return;
+  if(a === "up"   && p.parentId){ S.root = p.parentId; S.open[p.parentId] = true; redraw(); }
+  if(a === "here"){ S.root = p.id; S.open[p.id] = true; redraw(); }
+  if(a === "nsb"){ S.fullNasab = !S.fullNasab; openSheet(p.id, true); }
+});
+
+
+$("#refsbody").innerHTML = REFS;
+$("#tPrint").onclick = () => { openAll(true); setTimeout(() => print(), 160); };
+go("home"); redraw();
+
 </script></body></html>
